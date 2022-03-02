@@ -2,6 +2,8 @@ package comp3350.fairprice.objects;
 
 //import java.util.*;
 
+import java.util.Locale;
+
 public class Post {
     private final String title;
     private final String description;
@@ -21,7 +23,7 @@ public class Post {
         return description;
     }
 
-    public String getprice() {
-        return "$" + String.valueOf(price);
+    public String getPrice() {
+        return "$" + String.format(Locale.CANADA, "%.2f", price);
     }
 }

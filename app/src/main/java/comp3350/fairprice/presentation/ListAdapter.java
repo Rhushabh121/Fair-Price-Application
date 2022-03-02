@@ -36,7 +36,7 @@ public class ListAdapter extends ArrayAdapter<Post> {
         TextView postPrice = convertView.findViewById(R.id.post_price);
 
         postTitle.setText(post.getTitle());
-        postPrice.setText(post.getprice());
+        postPrice.setText(post.getPrice());
 
         return convertView;
     }
