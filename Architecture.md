@@ -4,7 +4,7 @@
 
 
 
-![FinalDG](E:\R_3350_2022\Iteration1\FinalDG.png)
+![FinalDG](./Images/FinalDG.png)
 
 ## **Presentation/Interface Layer**
 
