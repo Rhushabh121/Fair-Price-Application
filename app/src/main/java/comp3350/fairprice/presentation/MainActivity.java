@@ -12,6 +12,7 @@ import comp3350.fairprice.databinding.ActivityMainBinding;
 
 import java.util.ArrayList;
 
+//This is the main page o the application that contains the list of posts.
 public class MainActivity extends AppCompatActivity {
 
     private AccessPosts accessPosts;
@@ -43,7 +44,7 @@ public class MainActivity extends AppCompatActivity {
             }
         }
     }
-
+//When this method is activated by the newPost button, it goes to the newPostActivity
     public void buttonNewPost(View v) {
         Intent mainIntent = new Intent(this, NewPostActivity.class);
         startActivity(mainIntent);
