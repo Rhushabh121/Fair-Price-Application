@@ -1,5 +1,5 @@
 ## Adding a Feature 
-One of the most important pieces of a buying and selling app, is the ability to make a post. Without this feature, both the sellers and buyers would have no user for the app. The users wouldn’t be able to see any items up for sale,  and the buyers wouldn't be able to put any items up for sale. This [feature](https://code.cs.umanitoba.ca/winter-2022-a01/group-8/fair-price/-/issues/3) was implemented first because it was needed in order to have a good starting point.
+One of the most important pieces of a buying and selling app, is the ability to make a post. Without this feature, both the sellers and buyers would have no use for the app. The users wouldn’t be able to see any items up for sale,  and the buyers wouldn't be able to put any items up for sale. This [feature](https://code.cs.umanitoba.ca/winter-2022-a01/group-8/fair-price/-/issues/3) was implemented first because it was needed in order to have a good starting point.
 
 [User story](https://code.cs.umanitoba.ca/winter-2022-a01/group-8/fair-price/-/issues/6)
 
@@ -29,7 +29,7 @@ We searched Group 9’s project for SOLID violations but could not find one. The
 
 
 ## Agile Planning
-One of the main things that we pushed to the next iteration was the ability to make a user account and login. We pushed it back because we deemed it to not be the most important part of the project at this point in time. Due to the lack of a database implementation, we made changes about posting an item.The user will no longer be able to post an image along with the description, price and name of the items for now.
+One of the main things that we pushed to the next iteration was the ability to make a user account and login. We pushed it back because we deemed it to not be the most important part of the project at this point in time. Due to the lack of a database implementation, we also made changes about posting an item.The user will no longer be able to post an image along with the description, price and name of the items for now.
 
 [Feature](https://code.cs.umanitoba.ca/winter-2022-a01/group-8/fair-price/-/issues/1)
 [User Story](https://code.cs.umanitoba.ca/winter-2022-a01/group-8/fair-price/-/issues/2)
