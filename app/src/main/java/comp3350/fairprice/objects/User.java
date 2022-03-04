@@ -7,10 +7,10 @@ public class User {
     private String email;
 
     //billing info
-    private int creditCard;
+    private String creditCard;
 
     //constructor
-    public User(String name, String password, String email, int creditCard){
+    public User(String name, String email, String password, String creditCard){
         this.name = name;
         this.password = password;
         this.email = email;
@@ -30,7 +30,7 @@ public class User {
         return email;
     }
 
-    public int getCreditCard() {
+    public String getCreditCard() {
         return creditCard;
     }
 
@@ -47,7 +47,7 @@ public class User {
         this.email = email;
     }
 
-    public void setCreditCard(int creditCard) {
+    public void setCreditCard(String creditCard) {
         this.creditCard = creditCard;
     }
 }
