@@ -1,5 +1,5 @@
 ## Adding a Feature 
-One of the most important pieces of a buying and selling app, is the ability to make a post. Without this feature, both the sellers and buyers would have no user for the app. The users wouldn’t be able to see any items up for sale,  and the buyers wouldn't be able to put any items up for sale. This [feature](Posting a Listing (#3) · Issues · winter-2022-A01 / Group 8 / Fair Price · GitLab (umanitoba.ca)) was implemented first because it was needed in order to have a good starting point.
+One of the most important pieces of a buying and selling app, is the ability to make a post. Without this feature, both the sellers and buyers would have no user for the app. The users wouldn’t be able to see any items up for sale,  and the buyers wouldn't be able to put any items up for sale. This [feature](https://code.cs.umanitoba.ca/winter-2022-a01/group-8/fair-price/-/issues/3) was implemented first because it was needed in order to have a good starting point.
 
 [User story](https://code.cs.umanitoba.ca/winter-2022-a01/group-8/fair-price/-/issues/6)
 
