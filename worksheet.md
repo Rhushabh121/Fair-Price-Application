@@ -20,8 +20,9 @@ The branching strategy our group will use for this project will be gitflow branc
 
 The whole branching strategy has been explained with details in the README.md file of our project [README.md] under heading “Branching Strategy”.
 
-[graph](https://code.cs.umanitoba.ca/winter-2022-a01/group-8/fair-price/-/blob/main/Images/git.png)
-[git log --graph](
+[Graph](https://code.cs.umanitoba.ca/winter-2022-a01/group-8/fair-price/-/blob/main/Images/graph.png)
+<br/>
+[git log --graph](https://code.cs.umanitoba.ca/winter-2022-a01/group-8/fair-price/-/blob/main/Images/git.png)
 
 
 ## Solid
