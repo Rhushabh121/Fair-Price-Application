@@ -51,8 +51,8 @@ brew install git-flow
  [1.1 means 1st iteration and 1st feature is completed, 2.3 is 2nd iteration's 3rd feature is completed] 
 
 4. Feature - feature_featureName
-5. Release - 
-6. Hotfix
+5. Release - test case development and other documentation creation branch
+6. Hotfix - bug fix branch
 
 
 ### Branch Description 🪵
