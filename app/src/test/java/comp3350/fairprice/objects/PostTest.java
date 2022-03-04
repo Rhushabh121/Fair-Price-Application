@@ -6,13 +6,15 @@ import org.junit.Test;
 
 public class PostTest {
     @Test
+    //Test the post class
     public void testPost() {
         Post post;
 
         System.out.println("\nStarting testPost");
-
+        //check if the post is instantiated
         post = new Post("Title", "Description", 10);
         assertNotNull(post);
+        //check if the parameters are set to the right things
         assertTrue("Title".equals(post.getTitle()));
         assertTrue("Description".equals(post.getDescription()));
         System.out.println(post.getPrice());
