@@ -1,11 +1,12 @@
 package comp3350.fairprice.business;
-
 import comp3350.fairprice.objects.Post;
-
 import java.util.ArrayList;
+
+
 //This class contains the hard coded database
 public class AccessPosts {
-//create anew arraylist that stores all the data
+
+    //create anew arraylist that stores all the data
     private ArrayList<Post> posts;
 
     public AccessPosts() {
