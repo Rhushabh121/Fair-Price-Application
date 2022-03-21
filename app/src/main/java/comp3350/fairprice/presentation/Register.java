@@ -5,15 +5,44 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.EditText;
 
 import comp3350.fairprice.R;
+import comp3350.fairprice.presentation.HomepageActivity;
+import comp3350.fairprice.presentation.Welcome;
+
 
 public class Register extends AppCompatActivity {
+
+    public static final String EXTRA_MESSAGE = "com.example.myfirstapp.MESSAGE";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_register);
+    }
+
+    /**
+     * Validate the user when the "Create Account" button is clicked.
+     * Ensure username does not exist in darabase
+     * If user is valid
+     *      take them to welcome page
+     * Else
+     *      Display error
+     * @param view
+     */
+    public void validate(View view) {
+
+        Intent intent = new Intent(this, Welcome.class);
+
+        // get inputs from username and password fields
+        EditText username = (EditText) findViewById(R.id.editTextTextPersonName4);
+        EditText password = (EditText) findViewById(R.id.editTextTextPersonName5);
+
+        String message = "Username: \t"+username.getText().toString()+"\nPassword: \t"+password.getText().toString();
+        intent.putExtra(EXTRA_MESSAGE, message);
+        startActivity(intent);
+
     }
 
     /**
@@ -26,4 +55,7 @@ public class Register extends AppCompatActivity {
         startActivity(intent);
 
     }
+
+
+
 }

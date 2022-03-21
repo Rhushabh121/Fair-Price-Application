@@ -33,6 +33,7 @@
             android:layout_width="151dp"
             android:layout_height="52dp"
             android:background="#AEAEAE"
+            android:onClick="validate"
             android:text="Create Account"
             app:layout_constraintBottom_toTopOf="@+id/button9"
             app:layout_constraintEnd_toEndOf="parent"
