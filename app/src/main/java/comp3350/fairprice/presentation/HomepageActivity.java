@@ -11,6 +11,7 @@ import comp3350.fairprice.presentation.MainActivity;
 import comp3350.fairprice.presentation.Login;
 
 
+
 public class HomepageActivity extends AppCompatActivity {
 
     @Override
@@ -37,7 +38,7 @@ public class HomepageActivity extends AppCompatActivity {
      */
     public void openRegister(View view) {
 
-        Intent intent = new Intent(this, MainActivity.class);
+        Intent intent = new Intent(this, Welcome.class);
         startActivity(intent);
 
     }
