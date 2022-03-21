@@ -24,7 +24,7 @@ public class Register extends AppCompatActivity {
 
     /**
      * Validate the user when the "Create Account" button is clicked.
-     * Ensure username does not exist in darabase
+     * Ensure username does not exist in database
      * If user is valid
      *      take them to welcome page
      * Else
