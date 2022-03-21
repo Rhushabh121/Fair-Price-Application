@@ -38,9 +38,14 @@ public class Register extends AppCompatActivity {
         // get inputs from username and password fields
         EditText username = (EditText) findViewById(R.id.editTextTextPersonName4);
         EditText password = (EditText) findViewById(R.id.editTextTextPersonName5);
-
-        String message = "Username: \t"+username.getText().toString()+"\nPassword: \t"
-                +password.getText().toString() +"\n\nYour account has been successfully created.";
+        String message = "";
+        if(username.length() != 0 && password.length() != 0) {
+             message = "Username: \t" + username.getText().toString() + "\nPassword: \t"
+                    + password.getText().toString() + "\n\nYour account has been successfully created.";
+        }
+        else {
+            message = "Unable to create the account.\nUsername and password did not meet specification";
+        }
         intent.putExtra(EXTRA_MESSAGE, message);
         startActivity(intent);
 
