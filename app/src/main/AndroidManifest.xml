@@ -9,12 +9,13 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.FairPrice">
-
+        <activity
+            android:name=".presentation.Register"
+            android:exported="false" />
         <activity
             android:name=".presentation.Welcome"
-            android:parentActivityName=".presentation.Login"
-        android:exported="false" />
-
+            android:exported="false"
+            android:parentActivityName=".presentation.Login" />
         <activity
             android:name=".presentation.Login"
             android:exported="false" />
