@@ -46,18 +46,20 @@
         android:hint="@string/user_password"
         android:inputType="textPassword"
         android:text=""
+        app:layout_constraintBottom_toTopOf="@+id/constraintLayout"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName" />
+        app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName"
+        app:layout_constraintVertical_bias="0.078" />
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/constraintLayout"
+        android:layout_width="match_parent"
         android:layout_height="276dp"
         android:background="#D5D5D5"
+        app:layout_constraintBottom_toBottomOf="parent"
         tools:context=".presentation.Login"
-        android:layout_width="match_parent"
-        tools:layout_editor_absoluteX="-1dp"
-        tools:layout_editor_absoluteY="454dp">
+        tools:layout_editor_absoluteX="-1dp">
 
         <Button
             android:id="@+id/button5"
