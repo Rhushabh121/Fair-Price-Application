@@ -8,6 +8,8 @@ import android.view.View;
 
 import comp3350.fairprice.R;
 import comp3350.fairprice.presentation.MainActivity;
+import comp3350.fairprice.presentation.Login;
+
 
 public class HomepageActivity extends AppCompatActivity {
 
@@ -21,12 +23,25 @@ public class HomepageActivity extends AppCompatActivity {
      * this function on button click will open the main
      * page where all the products are listed
      */
-    public void openMain(View view) {
+    public void openLogin(View view) {
+
+        Intent intent = new Intent(this, Login.class);
+        startActivity(intent);
+
+    }
+
+
+    /**
+     * this function on "Login" button click will open the login
+     * page for user to enter username and password.
+     */
+    public void openRegister(View view) {
 
         Intent intent = new Intent(this, MainActivity.class);
         startActivity(intent);
 
-
     }
+
+
 
 }

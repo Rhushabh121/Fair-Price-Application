@@ -12,39 +12,42 @@
 
         <Button
             android:id="@+id/button2"
-            android:layout_width="139dp"
-            android:layout_height="61dp"
+            android:layout_width="119dp"
+            android:layout_height="47dp"
             android:background="#AEAEAE"
             android:onClick="openMain"
             android:text="Explore"
             android:textSize="20sp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.496"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/constraintLayout2"
-            app:layout_constraintVertical_bias="0.228" />
+            app:layout_constraintVertical_bias="0.263" />
 
         <Button
             android:id="@+id/button4"
-            android:layout_width="142dp"
-            android:layout_height="59dp"
+            android:layout_width="118dp"
+            android:layout_height="45dp"
             android:background="#AEAEAE"
+            android:onClick="openLogin"
             android:text="Login"
             android:textAlignment="center"
             android:textColor="#000000"
             android:textSize="20sp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.505"
+            app:layout_constraintHorizontal_bias="0.498"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/button2"
-            app:layout_constraintVertical_bias="0.161" />
+            app:layout_constraintVertical_bias="0.215" />
 
         <Button
             android:id="@+id/button3"
-            android:layout_width="142dp"
-            android:layout_height="59dp"
+            android:layout_width="124dp"
+            android:layout_height="47dp"
             android:background="#AEAEAE"
+            android:onClick="openRegister"
             android:text="Register"
             android:textAlignment="center"
             android:textColor="#000000"
@@ -54,7 +57,7 @@
             app:layout_constraintHorizontal_bias="0.505"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/button2"
-            app:layout_constraintVertical_bias="0.706" />
+            app:layout_constraintVertical_bias="0.664" />
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:id="@+id/constraintLayout2"
