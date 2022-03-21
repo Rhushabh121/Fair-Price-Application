@@ -20,7 +20,6 @@ public class Login extends AppCompatActivity {
 
     }
 
-
     /**
      * Authenticate the user when the "Sign in" button is clicked
      * @param view
