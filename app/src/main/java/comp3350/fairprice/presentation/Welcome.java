@@ -4,9 +4,12 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.TextView;
 
 import comp3350.fairprice.R;
+import comp3350.fairprice.presentation.Register;
+
 
 
 /**
@@ -30,5 +33,27 @@ public class Welcome extends AppCompatActivity {
         textView.setText(message);
     }
 
+
+    /**
+     * this function on button click will open the main
+     * page where all the products are listed
+     */
+    public void goBack(View view) {
+
+        Intent intent = new Intent(this, Register.class);
+        startActivity(intent);
+
+    }
+
+    /**
+     * Open the main page where all the listings are present.
+     * @param view
+     */
+    public void openExplore(View view) {
+
+        Intent intent = new Intent(this, MainActivity.class);
+        startActivity(intent);
+
+    }
 
 }

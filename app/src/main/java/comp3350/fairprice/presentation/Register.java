@@ -39,7 +39,8 @@ public class Register extends AppCompatActivity {
         EditText username = (EditText) findViewById(R.id.editTextTextPersonName4);
         EditText password = (EditText) findViewById(R.id.editTextTextPersonName5);
 
-        String message = "Username: \t"+username.getText().toString()+"\nPassword: \t"+password.getText().toString();
+        String message = "Username: \t"+username.getText().toString()+"\nPassword: \t"
+                +password.getText().toString() +"\n\nYour account has been successfully created.";
         intent.putExtra(EXTRA_MESSAGE, message);
         startActivity(intent);
 
