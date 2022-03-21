@@ -20,6 +20,7 @@ public class Login extends AppCompatActivity {
 
     }
 
+    
     /**
      * Authenticate the user when the "Sign in" button is clicked.
      * Ensure username exists and the corresponding password matches
