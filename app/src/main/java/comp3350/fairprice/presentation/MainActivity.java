@@ -49,4 +49,9 @@ public class MainActivity extends AppCompatActivity {
         Intent mainIntent = new Intent(this, NewPostActivity.class);
         startActivity(mainIntent);
     }
+
+    public void goToHome(View v) {
+        Intent mainIntent = new Intent(this, HomepageActivity.class);
+        startActivity(mainIntent);
+    }
 }
