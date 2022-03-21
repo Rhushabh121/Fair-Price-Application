@@ -21,7 +21,12 @@ public class Login extends AppCompatActivity {
     }
 
     /**
-     * Authenticate the user when the "Sign in" button is clicked
+     * Authenticate the user when the "Sign in" button is clicked.
+     * Ensure username exists and the corresponding password matches
+     * If user is authenticated
+     *      take them to welcome page
+     * Else
+     *      Display error
      * @param view
      */
     public void authenticate(View view) {
