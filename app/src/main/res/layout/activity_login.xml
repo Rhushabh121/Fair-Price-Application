@@ -13,6 +13,7 @@
         android:layout_marginTop="56dp"
         android:text="Login"
         android:textAlignment="center"
+        android:textColor="@color/black"
         android:textSize="50sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.497"
@@ -64,6 +65,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="52dp"
             android:background="#AEAEAE"
+            android:onClick="authenticate"
             android:text="Sign in"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -79,9 +81,10 @@
             android:text="Back"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.501"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/button5"
-            app:layout_constraintVertical_bias="0.222" />
+            app:layout_constraintVertical_bias="0.145" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 
 
