@@ -8,8 +8,8 @@
 
     <TextView
         android:id="@+id/textView"
-        android:layout_width="322dp"
-        android:layout_height="113dp"
+        android:layout_width="309dp"
+        android:layout_height="197dp"
         android:layout_marginBottom="16dp"
         android:text="Username and password"
         android:textAlignment="center"
@@ -50,6 +50,7 @@
             android:layout_height="wrap_content"
             android:layout_marginBottom="28dp"
             android:background="#AEAEAE"
+            android:onClick="goBack"
             android:text="Back"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
