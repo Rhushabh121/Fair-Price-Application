@@ -1,7 +1,6 @@
 package comp3350.fairprice.presentation;
 
 import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -13,7 +12,9 @@ import comp3350.fairprice.presentation.HomepageActivity;
 
 
 
+
 public class Login extends AppCompatActivity {
+
     public static final String EXTRA_MESSAGE = "com.example.myfirstapp.MESSAGE";
 
     @Override
@@ -42,8 +43,7 @@ public class Login extends AppCompatActivity {
         EditText username = (EditText) findViewById(R.id.editTextTextPersonName);
         EditText password = (EditText) findViewById(R.id.editTextTextPersonName3);
 
-
-        String message = "Hello\n\nUsername: \t"+username.getText().toString()+"\nPassword: \t"+password.getText().toString();
+        String message = "Username: \t"+username.getText().toString()+"\nPassword: \t"+password.getText().toString();
         intent.putExtra(EXTRA_MESSAGE, message);
         startActivity(intent);
 
