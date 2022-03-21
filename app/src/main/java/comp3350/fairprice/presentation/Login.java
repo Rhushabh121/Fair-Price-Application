@@ -8,6 +8,10 @@ import android.view.View;
 import android.widget.EditText;
 
 import comp3350.fairprice.R;
+import comp3350.fairprice.presentation.Welcome;
+import comp3350.fairprice.presentation.HomepageActivity;
+
+
 
 public class Login extends AppCompatActivity {
     public static final String EXTRA_MESSAGE = "com.example.myfirstapp.MESSAGE";
@@ -20,7 +24,7 @@ public class Login extends AppCompatActivity {
 
     }
 
-    
+
     /**
      * Authenticate the user when the "Sign in" button is clicked.
      * Ensure username exists and the corresponding password matches
@@ -33,9 +37,25 @@ public class Login extends AppCompatActivity {
     public void authenticate(View view) {
 
         Intent intent = new Intent(this, Welcome.class);
-        EditText editText = (EditText) findViewById(R.id.editTextTextPersonName);
-        String message = editText.getText().toString();
+
+        // get inputs from username and password fields
+        EditText username = (EditText) findViewById(R.id.editTextTextPersonName);
+        EditText password = (EditText) findViewById(R.id.editTextTextPersonName3);
+
+
+        String message = "Hello\n\nUsername: \t"+username.getText().toString()+"\nPassword: \t"+password.getText().toString();
         intent.putExtra(EXTRA_MESSAGE, message);
+        startActivity(intent);
+
+    }
+
+    /**
+     * this function on button click will open the main
+     * page where all the products are listed
+     */
+    public void goBack(View view) {
+
+        Intent intent = new Intent(this, HomepageActivity.class);
         startActivity(intent);
 
     }
