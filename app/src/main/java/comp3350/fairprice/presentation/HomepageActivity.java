@@ -9,6 +9,7 @@ import android.view.View;
 import comp3350.fairprice.R;
 import comp3350.fairprice.presentation.MainActivity;
 import comp3350.fairprice.presentation.Login;
+import comp3350.fairprice.presentation.Register;
 
 
 
@@ -19,6 +20,19 @@ public class HomepageActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_homepage);
     }
+
+
+    /**
+     * this function on button click will open the main
+     * page where all the products are listed
+     */
+    public void openMain(View view) {
+
+        Intent intent = new Intent(this, MainActivity.class);
+        startActivity(intent);
+
+    }
+
 
     /**
      * this function on button click will open the main
@@ -38,7 +52,7 @@ public class HomepageActivity extends AppCompatActivity {
      */
     public void openRegister(View view) {
 
-        Intent intent = new Intent(this, Welcome.class);
+        Intent intent = new Intent(this, Register.class);
         startActivity(intent);
 
     }
