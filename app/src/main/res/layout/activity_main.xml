@@ -17,6 +17,18 @@
         android:onClick="buttonNewPost"
         android:text="@string/new_post" />
 
+    <Button
+        android:id="@+id/button2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginEnd="29dp"
+        android:layout_marginBottom="80dp"
+        android:onClick="buttonCategories"
+        android:scaleX="0.89"
+        android:text="@string/categories" />
+
     <ListView
         android:id="@+id/post_list"
         android:layout_width="match_parent"

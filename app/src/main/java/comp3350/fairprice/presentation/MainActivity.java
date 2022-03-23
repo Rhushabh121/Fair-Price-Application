@@ -49,4 +49,11 @@ public class MainActivity extends AppCompatActivity {
         Intent mainIntent = new Intent(this, NewPostActivity.class);
         startActivity(mainIntent);
     }
+
+    public void buttonCategories(View v) {
+        Intent mainIntent = new Intent(this, Categories.class);
+        startActivity(mainIntent);
+    }
+
+
 }

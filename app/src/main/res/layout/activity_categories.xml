@@ -32,7 +32,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="150dp"
                 android:layout_margin="20dp"
-                android:background="@drawable/Red">
+                android:background="@drawable/red">
 
                 <ImageView
                     android:layout_width="match_parent"
@@ -172,7 +172,7 @@
                 android:layout_alignParentRight="true"
                 android:layout_marginTop="-1sp"
                 android:layout_marginRight="-110dp"
-                android:src="@drawable/PSfive" />
+                android:src="@drawable/psfive" />
 
         </RelativeLayout>
 
