@@ -13,7 +13,77 @@
     <option name="autoReloadType" value="NONE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a89a1570-ab73-4224-abda-166fa9e87016" name="Default Changelist" comment="Added postTest.java and added formatting for Post.getPrice()" />
+    <list default="true" id="a89a1570-ab73-4224-abda-166fa9e87016" name="Default Changelist" comment="Added postTest.java and added formatting for Post.getPrice()">
+      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Architecture.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Images/FinalDG.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Images/branches.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Images/git.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Images/graph.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Images/hotfix.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Images/reference1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Images/reference2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Images/release.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/build.gradle" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/proguard-rules.pro" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/androidTest/java/comp3350/fairprice/ExampleInstrumentedTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/assets/db/SC.script" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/comp3350/fairprice/application/Main.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/comp3350/fairprice/application/Services.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/comp3350/fairprice/business/AccessPU.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/comp3350/fairprice/business/AccessPosts.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/comp3350/fairprice/business/AccessUsers.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/comp3350/fairprice/objects/PU.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/comp3350/fairprice/objects/Post.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/comp3350/fairprice/objects/User.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/comp3350/fairprice/persistence/PUPersistence.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/comp3350/fairprice/persistence/PostPersistence.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/comp3350/fairprice/persistence/UserPersistence.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/comp3350/fairprice/persistence/hsqldb/PUPersistenceHSQLDB.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/comp3350/fairprice/persistence/hsqldb/PostPersistenceHSQLDB.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/comp3350/fairprice/persistence/hsqldb/UserPersistenceHSQLDB.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/comp3350/fairprice/presentation/ListAdapter.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/comp3350/fairprice/presentation/MainActivity.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/comp3350/fairprice/presentation/NewPostActivity.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/ic_launcher_background.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_main.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_new_post.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/layout/post_list_item.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/mipmap-hdpi/ic_launcher.webp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/mipmap-hdpi/ic_launcher_round.webp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/mipmap-mdpi/ic_launcher.webp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/mipmap-mdpi/ic_launcher_round.webp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/mipmap-xhdpi/ic_launcher.webp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/mipmap-xhdpi/ic_launcher_round.webp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/mipmap-xxhdpi/ic_launcher.webp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/mipmap-xxhdpi/ic_launcher_round.webp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/mipmap-xxxhdpi/ic_launcher.webp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/mipmap-xxxhdpi/ic_launcher_round.webp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/values-night/themes.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/values/colors.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/values/strings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/values/themes.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/test/java/comp3350/fairprice/AllTests.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/test/java/comp3350/fairprice/ExampleUnitTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/test/java/comp3350/fairprice/business/AccessPostsTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/test/java/comp3350/fairprice/objects/PostTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/test/java/comp3350/fairprice/objects/UserTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/gradle.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/gradle/wrapper/gradle-wrapper.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/gradle/wrapper/gradle-wrapper.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/gradlew" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/gradlew.bat" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/local.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/settings.gradle" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/worksheet.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -23,6 +93,18 @@
     <projectState path="$PROJECT_DIR$">
       <ProjectState />
     </projectState>
+  </component>
+  <component name="ExternalProjectsManager">
+    <system id="GRADLE">
+      <state>
+        <projects_view>
+          <tree_state>
+            <expand />
+            <select />
+          </tree_state>
+        </projects_view>
+      </state>
+    </system>
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -62,7 +144,7 @@
       <recent name="comp3350.fairprice.objects" />
     </key>
   </component>
-  <component name="RunManager" selected="Gradle.AllTests">
+  <component name="RunManager" selected="Android App.MainActivity">
     <configuration name="MainActivity" type="AndroidRunConfigurationType" factoryName="Android App" activateToolWindowBeforeRun="false" temporary="true">
       <module name="Fair_Price.app" />
       <option name="DEPLOY" value="true" />
@@ -301,9 +383,9 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Android App.MainActivity" />
         <item itemvalue="Gradle.AllTests" />
         <item itemvalue="Gradle.AccessPostsTest.testAccessPosts" />
-        <item itemvalue="Android App.MainActivity" />
         <item itemvalue="Gradle.PostTest.testPost" />
         <item itemvalue="Android Instrumented Tests.testPost()" />
       </list>
