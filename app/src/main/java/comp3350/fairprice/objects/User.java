@@ -5,25 +5,16 @@ public class User {
     private String name;
     private String password;
     private String email;
-    private String UserId;
+
     //billing info
     private String creditCard;
 
     //constructor
-    public User(final String UserId)
-    {
-        this.UserId = UserId;
-        this.name = null;
-        this.email = null;
-        this.password = null;
-        this.creditCard = null;
-    }
-    public User(String userId, String name, String email, String password, String creditCard){
+    public User(String name, String email, String password, String creditCard){
         this.name = name;
         this.password = password;
         this.email = email;
         this.creditCard = creditCard;
-        this.UserId = userId;
     }
 
     //getters
@@ -41,10 +32,6 @@ public class User {
 
     public String getCreditCard() {
         return creditCard;
-    }
-
-    public String getUserId() {
-        return UserId;
     }
 
     //setters

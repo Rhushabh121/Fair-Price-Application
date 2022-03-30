@@ -17,8 +17,8 @@ public class AccessPostsTest {
         accessPosts = new AccessPosts();
         assertNotNull(accessPosts);
 
-        Post newPost = new Post(1,"Title", "Description", 10);
-        accessPosts.addPost("Title", "Description", 10);
+        Post newPost = new Post("Title", "Description", 10);
+        accessPosts.addPost(newPost);
 //test if the post is added to the database
         assertTrue(newPost.equals(accessPosts.getPosts().get(accessPosts.getPosts().size()-1)));
 

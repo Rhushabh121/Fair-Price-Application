@@ -14,13 +14,12 @@ import comp3350.fairprice.objects.Post;
 import comp3350.fairprice.R;
 
 import java.util.ArrayList;
-import java.util.List;
 
 //This class is used for maintaining the list items
 public class ListAdapter extends ArrayAdapter<Post> {
 
-    public ListAdapter(Context context, List<Post> postList) {
-        super(context, R.layout.post_list_item, postList);
+    public ListAdapter(Context context, ArrayList<Post> postArrayList) {
+        super(context, R.layout.post_list_item, postArrayList);
     }
 
     @NonNull

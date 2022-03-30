@@ -1,7 +1,6 @@
 # Vision Statement 🧿
 
   
-  
 ## Summary  📝
 
 **Fair Price** is an application that will be used for the basic purpose of buying and selling goods. The application is available throughout the nation, and people will be able to see products by using a **Location** filter. In the application, users as sellers will be able to post an advertisement of a product, accompanying the price, images, description, offer price by the seller, general chat area, for that particular item.

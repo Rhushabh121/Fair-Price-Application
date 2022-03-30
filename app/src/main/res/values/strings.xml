@@ -3,4 +3,7 @@
     <string name="new_post">New Post</string>
     <string name="post">Post</string>
     <string name="password">password</string>
+    <string name="user_name">Enter Username</string>
+    <string name="user_password">Password</string>
+    <string name="button_signin">Signin</string>
 </resources>
