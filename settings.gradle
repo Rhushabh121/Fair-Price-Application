@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 pluginManagement {
     repositories {
         gradlePluginPortal()
@@ -15,21 +14,3 @@ dependencyResolutionManagement {
 }
 rootProject.name = "Fair Price"
 include ':app'
-=======
-pluginManagement {
-    repositories {
-        gradlePluginPortal()
-        google()
-        mavenCentral()
-    }
-}
-dependencyResolutionManagement {
-    repositoriesMode.set(RepositoriesMode.FAIL_ON_PROJECT_REPOS)
-    repositories {
-        google()
-        mavenCentral()
-    }
-}
-rootProject.name = "Fair Price"
-include ':app'
->>>>>>> fixed-db
