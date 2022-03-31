@@ -5,15 +5,27 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.ArrayAdapter;
 import android.widget.EditText;
+import android.widget.ListView;
+
+import java.util.List;
 
 import comp3350.fairprice.R;
+import comp3350.fairprice.business.AccessUsers;
+import comp3350.fairprice.objects.User;
 import comp3350.fairprice.presentation.HomepageActivity;
 import comp3350.fairprice.presentation.Welcome;
 
 
 public class Register extends AppCompatActivity {
 
+    private AccessUsers accessUsers;
+    private List<User> userList;
+    private ArrayAdapter<User> userArrayAdapter;
+
+
+    public  static int userCount = 0;
     public static final String EXTRA_MESSAGE = "com.example.myfirstapp.MESSAGE";
 
     @Override
@@ -31,7 +43,7 @@ public class Register extends AppCompatActivity {
      *      Display error
      * @param view
      */
-    public void validate(View view) {
+    public void registerUser(View view) {
 
         Intent intent = new Intent(this, Welcome.class);
 
@@ -49,7 +61,68 @@ public class Register extends AppCompatActivity {
         intent.putExtra(EXTRA_MESSAGE, message);
         startActivity(intent);
 
+
+        User user = createUserFromEditText();
+        String result;
+
+        result = validateUserData(user, true);
+        if (result == null) {
+            try {
+                user = accessUsers.addUser(user);
+
+                userList = accessUsers.getUsers();
+                userArrayAdapter.notifyDataSetChanged();
+                int pos = userList.indexOf(user);
+
+//                if (pos >= 0) {
+//                    ListView listView = (ListView)findViewById(R.id.listUsers);
+//                    listView.setSelection(pos);
+//                }
+
+            } catch (final Exception e) {
+                System.out.println(e.getMessage());
+            }
+        } else {
+            System.out.println(result);
+        }
+
     }
+
+
+    /**
+     * Create a user object when the create account button is clicked in activity_register and
+     *
+     * @return User object is returned
+     */
+    private User createUserFromEditText() {
+            EditText username = (EditText)findViewById(R.id.editTextTextPersonName4);
+            EditText password = (EditText)findViewById(R.id.editTextTextPersonName5);
+
+            User user = new User(Integer.toString(userCount), username.getText().toString(), "", password.getText().toString(), "");
+            userCount++;
+            return user;
+    }
+
+
+    /**
+     *
+     * @param user
+     * @param isNewUser
+     * @return
+     */
+    private String validateUserData(User user, boolean isNewUser) {
+        if (user.getName().length() == 0) {
+            return "Username required";
+        }
+
+        if (user.getPassword().length() == 0) {
+            return "Password required";
+        }
+
+        return null;
+    }
+
+
 
     /**
      * this function on button click will open the main

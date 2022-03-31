@@ -6,11 +6,13 @@ import java.util.Locale;
 
 //This class represents an Object post that can be added to a database
 public class Post {
+
     //information a post has
     private final String title;
     private final String description;
     private final double price;
     private int PostId;
+
     //constructor
     public Post(final int PosId)
     {
