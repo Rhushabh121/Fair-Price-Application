@@ -57,6 +57,7 @@
         android:layout_width="match_parent"
         android:layout_height="276dp"
         android:background="#D5D5D5"
+        android:onClick="goBack"
         app:layout_constraintBottom_toBottomOf="parent"
         tools:context=".presentation.Login"
         tools:layout_editor_absoluteX="-1dp">
