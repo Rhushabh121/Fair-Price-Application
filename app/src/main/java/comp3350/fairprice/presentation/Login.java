@@ -38,9 +38,8 @@ public class Login extends AppCompatActivity {
         try
         {
             userList = new ArrayList<>();
-            userList.addAll(accessUsers.getUsers();
+            userList.addAll(accessUsers.getUsers());
             userArrayAdapter = new ArrayAdapter<User>(this, android.R.layout.simple_list_item_activated_2, android.R.id.text1, userList);
-
         }
         catch (final Exception e)
         {
@@ -65,7 +64,10 @@ public class Login extends AppCompatActivity {
         EditText username = (EditText) findViewById(R.id.editTextTextPersonName);
         EditText password = (EditText) findViewById(R.id.editTextTextPersonName3);
         String message = "";
-        if(username.length() != 0 && password.length() != 0) {
+
+        int userExists = userList.indexOf(username);
+
+        if(username.length() != 0 && password.length() != 0 && userExists != -1) {
              message = "Username: \t"+username.getText().toString()+"\nPassword: \t"+password.getText().toString();
 
         }
