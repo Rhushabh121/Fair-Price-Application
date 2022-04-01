@@ -7,10 +7,8 @@ This debt is classified as Deliberate and Prudent. We knew that aspect of our co
 2. Second instance is where we were not able to figure out how to create an individual instance of the whole application tailored to the user’s profile privately. We overcame that by simply laying out the structure to the whole application first and ensuring all the pages connect to different pages for users to be able to navigate and have that first prototype of the project in place. We pushed the profile integration to the private instance of application to the next iteration. 
 This debt is classified as Inadvertent and Prudent. We decided to lay out the foundations for the app for the release rather than implementing the whole thing altogether rather than having only 1-2 view layout pages in the app.
 
-[Instance2a]
-(https://code.cs.umanitoba.ca/winter-2022-a01/group-8/fair-price/-/commits/feature_Login/)
-[Instance2b]
-(https://code.cs.umanitoba.ca/winter-2022-a01/group-8/fair-price/-/commits/feature_Login/)
+[Instance2a](https://code.cs.umanitoba.ca/winter-2022-a01/group-8/fair-price/-/commits/feature_Login/)
+[Instance2b](https://code.cs.umanitoba.ca/winter-2022-a01/group-8/fair-price/-/commits/feature_Login/)
 
 ## SOLID VIOLATION
 We searched Group 7's project for SOLID violations but could not find a reasonable one. Each of their classes were short and only did one thing. There weren't any repeated files and their code was open to extensions.
