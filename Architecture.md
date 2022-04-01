@@ -22,7 +22,7 @@ This class is for maintining the list items.
 
 ##### Welcome: 
 
-Welcome page
+After the user registers and login this page gets displayed as a profile for user to navigate. 
 
 ##### Register:
 
@@ -34,6 +34,7 @@ The Login page for User
 
 ##### HomepageActivity: 
 
+All in one place view for our application where all the conection to the pages is 
 
 ##### Categories: 
 
@@ -58,7 +59,11 @@ From this class the access of the database is done, this will access the User ob
 
 ##### Main: 
 
+This class gives the database path name to all other classes. 
+
 ##### Services: 
+
+This class gets the persicatnce of the objects.
 
 ## **Persistence**
 
