@@ -5,5 +5,5 @@ import comp3350.fairprice.objects.User;
 public interface UserPersistence {
     List<User> getUserList();
     User insertUser(User user);
-    void deleteUser(User user);
+    void deleteUser(User CurrentUser);
 }
