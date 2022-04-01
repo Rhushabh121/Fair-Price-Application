@@ -8,6 +8,7 @@ This debt is classified as Deliberate and Prudent. We knew that aspect of our co
 This debt is classified as Inadvertent and Prudent. We decided to lay out the foundations for the app for the release rather than implementing the whole thing altogether rather than having only 1-2 view layout pages in the app.
 
 [Instance2a](https://code.cs.umanitoba.ca/winter-2022-a01/group-8/fair-price/-/commits/feature_Login/)
+  
 [Instance2b](https://code.cs.umanitoba.ca/winter-2022-a01/group-8/fair-price/-/commits/feature_Login/)
 
 ## SOLID VIOLATION
