@@ -8,57 +8,62 @@
 
 ## **Presentation/Interface Layer**
 
-##### MainActivity: 
+##### MainActivity
 
 The main page of the application which containslist of the posts.
 
-##### NewPostActivity: 
+##### NewPostActivity 
 
 The new post activity will let user allows the add their post.
 
-##### ListAdapter: 
+##### ListAdapter
 
 This class is for maintining the list items.
 
-##### Welcome: 
+##### Welcome
 
-Welcome page
+The landing page for the user onces he logs in to the profile or registers his profile for the first time.  
 
-##### Register:
+##### Register
 
-The sign up page 
+The sign up page  to register a new user.
 
-##### Login: 
+##### Login
 
-The Login page for User
+The Login page for User to login to his profile.
 
-##### HomepageActivity: 
+##### HomepageActivity 
 
+The main page for the application where user can go to different pages directly with click of a button. 
 
-##### Categories: 
+##### Categories
 
 This class where user can find the posts according to their cagegories, it is kind of like advance search feature.
 
-##### Description: 
+##### Description 
 
 
 ## **Business/Logic Layer**
 
-##### AccessPosts: 
+##### AccessPosts 
 
 From this class the access of the database is done, this will access the Post object data from the database
 
-##### AccessPU: 
+##### AccessPU 
 
 From this class the access of the database is done, this will access the PU object data from  the database
 
-##### AccessUsers: 
+##### AccessUsers 
 
 From this class the access of the database is done, this will access the User object data from the database
 
-##### Main: 
+##### Main 
 
-##### Services: 
+This class gives database part to all other classes.
+
+##### Services
+
+This class gets persistence of all the object classes. 
 
 ## **Persistence**
 
@@ -76,11 +81,11 @@ This class implements the interface of the UserPersistence and connects to the d
 
 ## **Domain Objects**
 
-##### Posts:
+##### Posts
 
 The class is for object of post, it will be needed when adding a post in the list.
 
-##### User: 
+##### User 
 
 The class is User object it will be needed while saving a user in the database.
 
