@@ -4,7 +4,7 @@
 
 
 
-![FinalDG](./Images/FinalDG.png)
+![Architecture]()
 
 ## **Presentation/Interface Layer**
 
@@ -20,15 +20,59 @@ The new post activity will let user allows the add their post.
 
 This class is for maintining the list items.
 
+##### Welcome: 
+
+Welcome page
+
+##### Register:
+
+The sign up page 
+
+##### Login: 
+
+The Login page for User
+
+##### HomepageActivity: 
+
+
+##### Categories: 
+
+This class where user can find the posts according to their cagegories, it is kind of like advance search feature.
+
+##### Description: 
 
 
 ## **Business/Logic Layer**
 
 ##### AccessPosts: 
 
-The hard coded data about the posts are in this class and it will be accessed in main activity.
+From this class the access of the database is done, this will access the Post object data from the database
 
+##### AccessPU: 
 
+From this class the access of the database is done, this will access the PU object data from  the database
+
+##### AccessUsers: 
+
+From this class the access of the database is done, this will access the User object data from the database
+
+##### Main: 
+
+##### Services: 
+
+## **Persistence**
+
+##### PostPersistenceHSQLDB
+
+This class implements the interface of the PostPersistence and connects to the database
+
+##### PUPersistenceHSQLDB
+
+This class implements the interface of the PUPersistence and connects to the database
+
+##### UserPersistenceHSQLDB
+
+This class implements the interface of the UserPersistence and connects to the database
 
 ## **Domain Objects**
 
@@ -39,3 +83,7 @@ The class is for object of post, it will be needed when adding a post in the lis
 ##### User: 
 
 The class is User object it will be needed while saving a user in the database.
+
+##### PU
+
+This class is a PostUser object it deals with pirticular user and their posts. this will be in iteration 3
