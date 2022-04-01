@@ -6,6 +6,10 @@ import comp3350.fairprice.application.Services;
 import comp3350.fairprice.objects.PU;
 import comp3350.fairprice.persistence.PUPersistence;
 
+
+/**
+ * THIS CLASS IS PRE-ADDED FOR ITERATION 3 - INCOMPLETE
+ */
 public class AccessPU {
     private PUPersistence dataAccess;
     private List<PU> elements;

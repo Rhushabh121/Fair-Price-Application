@@ -1,5 +1,9 @@
 package comp3350.fairprice.objects;
 
+
+/**
+ * THIS CLASS IS PRE-ADDED FOR ITERATION 3 - INCOMPLETE
+ */
 public class PU {
     private final Post post;
     private final User user;
