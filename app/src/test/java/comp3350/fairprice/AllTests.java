@@ -4,6 +4,7 @@ import org.junit.runner.RunWith;
 import org.junit.runners.Suite;
 
 import comp3350.fairprice.business.AccessPostsTest;
+import comp3350.fairprice.business.AccessUsersTest;
 import comp3350.fairprice.objects.PostTest;
 import comp3350.fairprice.objects.UserTest;
 
@@ -11,6 +12,7 @@ import comp3350.fairprice.objects.UserTest;
 @Suite.SuiteClasses({
         PostTest.class,
         AccessPostsTest.class,
+        AccessUsersTest.class,
         UserTest.class
 })
 
