@@ -35,7 +35,8 @@ public class Register extends AppCompatActivity {
     }
 
     /**
-     * Validate the user when the "Create Account" button is clicked.
+     * Validate the user when the "Create Account" button is clicked in  activity_register.xml.
+     *
      * Ensure username does not exist in database
      * If user is valid
      *      take them to welcome page
@@ -45,14 +46,42 @@ public class Register extends AppCompatActivity {
      */
     public void registerUser(View view) {
 
+        // --------------- DATABASE Changes -----------------
+
+        User user = createUserFromEditText();
+        String result;
+
+        result = validateUserData(user, true);
+
+        if (result == null)
+        {
+            try {
+                user = accessUsers.addUser(user);
+                userList = accessUsers.getUsers();
+                userArrayAdapter.notifyDataSetChanged();
+
+                int pos = userList.indexOf(user);
+
+
+            } catch (final Exception e) {
+                System.out.println(e.getMessage());
+            }
+        }
+
+        else
+        {
+            System.out.println(result);
+        }
+
         Intent intent = new Intent(this, Welcome.class);
 
         // get inputs from username and password fields
         EditText username = (EditText) findViewById(R.id.editTextTextPersonName4);
         EditText password = (EditText) findViewById(R.id.editTextTextPersonName5);
+
         String message = "";
         if(username.length() != 0 && password.length() != 0) {
-             message = "Username: \t" + username.getText().toString() + "\nPassword: \t"
+            message = "Username: \t" + username.getText().toString() + "\nPassword: \t"
                     + password.getText().toString() + "\n\nYour account has been successfully created.";
         }
         else {
@@ -60,31 +89,6 @@ public class Register extends AppCompatActivity {
         }
         intent.putExtra(EXTRA_MESSAGE, message);
         startActivity(intent);
-
-
-        User user = createUserFromEditText();
-        String result;
-
-        result = validateUserData(user, true);
-        if (result == null) {
-            try {
-                user = accessUsers.addUser(user);
-
-                userList = accessUsers.getUsers();
-                userArrayAdapter.notifyDataSetChanged();
-                int pos = userList.indexOf(user);
-
-//                if (pos >= 0) {
-//                    ListView listView = (ListView)findViewById(R.id.listUsers);
-//                    listView.setSelection(pos);
-//                }
-
-            } catch (final Exception e) {
-                System.out.println(e.getMessage());
-            }
-        } else {
-            System.out.println(result);
-        }
 
     }
 
@@ -95,8 +99,11 @@ public class Register extends AppCompatActivity {
      * @return User object is returned
      */
     private User createUserFromEditText() {
+
+            // get inputs from the fields required for registration of user
             EditText username = (EditText)findViewById(R.id.editTextTextPersonName4);
             EditText password = (EditText)findViewById(R.id.editTextTextPersonName5);
+
 
             User user = new User(Integer.toString(userCount), username.getText().toString(), "", password.getText().toString(), "");
             userCount++;
