@@ -36,11 +36,11 @@ public class AccessPosts {
     }
 
     //This method takes in a post to add to the already existing database
-    public Post addPost(String title, String description, double price) {
+    public Post addPost(String title, String description, double price, String category) {
         posts = postPersistence.getPostList();
         currentPost = posts.size();
         //Log.d("tester","Adding post with ID:" + currentPost+1);
-        post = new Post(currentPost+1, title, description, price);
+        post = new Post(currentPost+1, title, description, price, category);
         return postPersistence.insertPost(post);
     }
 

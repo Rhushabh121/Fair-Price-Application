@@ -9,7 +9,9 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
+import android.widget.ListView;
 import android.widget.SearchView;
+import android.widget.TextView;
 
 import comp3350.fairprice.R;
 import comp3350.fairprice.application.Main;
@@ -32,6 +34,10 @@ public class MainActivity extends AppCompatActivity {
     ActivityMainBinding binding;
     SearchView searchView;
 
+    private String selectedCategory = "all";
+    private String currentSearchText ="";
+    TextView currentCategory;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -39,17 +45,26 @@ public class MainActivity extends AppCompatActivity {
 
 
         Intent mainIntent = this.getIntent();
-
         accessPosts = new AccessPosts();
+        setContentView(R.layout.activity_main);
 
         if (mainIntent != null) {
-            String title = mainIntent.getStringExtra("title");
-            String description = mainIntent.getStringExtra("description");
-            String price = mainIntent.getStringExtra("price");
-            if (title != null) {
-                accessPosts.addPost(title, description, Integer.parseInt(price));
+            String className = mainIntent.getStringExtra("class");
+            //new post stuff
+            if (className != null && className.equals("NPA")) {
+
+                String title = mainIntent.getStringExtra("title");
+                String description = mainIntent.getStringExtra("description");
+                String price = mainIntent.getStringExtra("price");
+                String category = mainIntent.getStringExtra("category");
+
+                if (title != null) {
+                    accessPosts.addPost(title, description, Integer.parseInt(price), category);
+                }
             }
+
         }
+
 
         postList = new ArrayList<>();
         postList.addAll(accessPosts.getPosts());
@@ -64,6 +79,20 @@ public class MainActivity extends AppCompatActivity {
         binding.postList.setClickable(true);
         searchView=  findViewById(R.id.searchItem);
         searchItem();
+
+        if (mainIntent != null) {
+            String className = mainIntent.getStringExtra("class");
+
+            if (className != null && className.equals("Categories")) {
+                String status = mainIntent.getStringExtra("status");
+                selectedCategory = status;
+
+                filterList(status);
+            }
+        }
+        currentCategory=(TextView) findViewById(R.id.currentCategory);
+        currentCategory.setText("Category: " + selectedCategory.toUpperCase());
+
 
 
         binding.postList.setOnItemClickListener(new AdapterView.OnItemClickListener() {
@@ -90,12 +119,16 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public boolean onItemLongClick(AdapterView<?> adapterView, View view, int i, long l) {
                 Intent description = new Intent(MainActivity.this, Description.class);
-                String des = postList.get(i).getDescription();
-                String title = postList.get(i).getTitle();
-                String price = postList.get(i).getPrice();
+
+                Post post= (Post) ((ListView) adapterView).getAdapter().getItem(i);
+                String des = post.getDescription();
+                String title= post.getTitle();
+                String price = post.getPrice();
+                String category = post.getCategory();
                 description.putExtra("price",price);
                 description.putExtra("title",title);
                 description.putExtra("Description",des);
+                description.putExtra("category",category);
                 description.putExtra("pos",i);
                 startActivity(description);
                 return false;
@@ -120,7 +153,7 @@ public class MainActivity extends AppCompatActivity {
         startActivity(mainIntent);
     }
 
-    private void searchItem(){
+    private void searchItem() {
 
         searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
             @Override
@@ -131,11 +164,19 @@ public class MainActivity extends AppCompatActivity {
 
             @Override
             public boolean onQueryTextChange(String s) {
-                ArrayList<Post> filteredPosts =new ArrayList<Post>();
+                currentSearchText=s;
+                ArrayList<Post> filteredPosts = new ArrayList<Post>();
 
-                for(Post post: postList){
-                    if(post.getTitle().toLowerCase().contains(s.toLowerCase())){
-                        filteredPosts.add(post);
+                for (Post post : postList) {
+                    if (post.getTitle().toLowerCase().contains(s.toLowerCase())) {
+                        if (selectedCategory.equals("all")) {
+                            filteredPosts.add(post);
+                        } else {
+                            if (post.getCategory().toLowerCase().contains(selectedCategory)) {
+                                filteredPosts.add(post);
+                            }
+                        }
+
                     }
                 }
 
@@ -148,6 +189,49 @@ public class MainActivity extends AppCompatActivity {
         });
 
 
+    }
+
+    private void filterList(String status) {
+
+        selectedCategory = status;
+        currentCategory=(TextView) findViewById(R.id.currentCategory);
+        currentCategory.setText("Category: " + selectedCategory.toUpperCase());
+
+        ArrayList<Post> filteredPosts = new ArrayList<Post>();
+        for (Post post : postList) {
+            if (post.getCategory().toLowerCase().contains(status)) {
+
+                if(currentSearchText == ""){
+                    filteredPosts.add(post);
+                }
+                else{
+                    if (post.getCategory().toLowerCase().contains(currentSearchText.toLowerCase())) {
+                        filteredPosts.add(post);
+                    }
+
+                }
+
+            }
+        }
+        ListAdapter listAdapter = new ListAdapter(MainActivity.this, filteredPosts);
+        binding.postList.setAdapter(listAdapter);
+        binding.postList.setClickable(true);
+
+
+    }
+
+    public void allItems(View v) {
+        selectedCategory = "all";
+        searchView.setQuery("",false);
+        searchView.clearFocus();
+
+
+        currentCategory=(TextView) findViewById(R.id.currentCategory);
+        currentCategory.setText("Category: " + selectedCategory.toUpperCase());
+
+        ListAdapter listAdapter = new ListAdapter(MainActivity.this, postList);
+        binding.postList.setAdapter(listAdapter);
+        binding.postList.setClickable(true);
     }
 
 

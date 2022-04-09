@@ -19,12 +19,18 @@ public class Description extends AppCompatActivity {
         String description = thisIntent.getStringExtra("Description");
         String title = thisIntent.getStringExtra("title");
         String price = thisIntent.getStringExtra("price");
+        String category = thisIntent.getStringExtra("category");
+
         TextView des = findViewById(R.id.description);
         TextView titles = findViewById(R.id.titleDes);
+        TextView categories = findViewById(R.id.categoryD);
         TextView prices = findViewById(R.id.priceView);
+
         titles.setText(title);
         prices.setText(price);
         des.setText(description);
+        categories.setText("Category: " + category);
+
     }
 
 }
