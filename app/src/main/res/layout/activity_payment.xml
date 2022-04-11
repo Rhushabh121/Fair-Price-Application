@@ -1,0 +1,197 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".presentation.payment">
+
+
+    <Button
+        android:id="@+id/btnBuyNow"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="36dp"
+        android:background="@color/Green"
+        android:onClick="clickBuyNow"
+        android:text="Buy Now"
+        android:textColor="@color/white"
+        android:textSize="25dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.499"
+        app:layout_constraintStart_toStartOf="parent" />
+
+
+    <!--  Name on card -->
+
+    <ImageView
+        android:id="@+id/imageView2"
+        android:layout_width="wrap_content"
+
+        android:layout_height="200dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="32dp"
+        android:layout_marginEnd="32dp"
+        android:src="@drawable/card"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/cardNameLayout"
+        android:layout_width="550dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="332dp"
+        android:layout_marginEnd="32dp"
+        android:hint="Name on Card"
+
+        app:endIconMode="clear_text"
+        app:helperText="Required*"
+        app:helperTextTextColor="@color/red"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/cardNameEditor"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <!--  Card Number -->
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/cardNumberLayout"
+        android:layout_width="550dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="456dp"
+        android:layout_marginEnd="32dp"
+        android:hint="Card Number"
+        app:counterEnabled="true"
+        app:counterMaxLength="16"
+        app:endIconMode="clear_text"
+        app:helperText="Required*"
+        app:helperTextTextColor="@color/red"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/cardNumberEditor"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="number"
+            android:layout_weight="1"
+            android:maxLength="16" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <!--  Expiration Date -->
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/ExpLayout"
+        android:layout_width="255dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="580dp"
+        android:hint="Expiry Date (MMYY)"
+        app:counterMaxLength="4"
+        app:counterEnabled="true"
+        app:endIconMode="clear_text"
+        app:helperText="Required*"
+        app:helperTextTextColor="@color/red"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/cardNumberLayout"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/ExpEditor"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="number"
+            android:maxLength="4" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <!--  CVV -->
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/CvvLayout"
+        android:layout_width="255dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="580dp"
+        android:hint="Security Code"
+        app:counterMaxLength="3"
+app:counterEnabled="true"
+        app:endIconMode="clear_text"
+        app:helperText="Required*"
+        app:helperTextTextColor="@color/red"
+        app:layout_constraintEnd_toEndOf="@+id/cardNumberLayout"
+        app:layout_constraintHorizontal_bias="0.0"
+
+        app:layout_constraintTop_toTopOf="parent">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/CvvEditor"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="number"
+            android:maxLength="3" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+
+    <!--  Postal Code -->
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/postalLayout"
+        android:layout_width="550dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="704dp"
+        android:layout_marginEnd="32dp"
+        android:hint="Postal Code"
+        app:counterMaxLength="6"
+        app:counterEnabled="true"
+        app:endIconMode="clear_text"
+        app:helperText="Required*"
+        app:helperTextTextColor="@color/red"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/postalEditor"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:maxLength="6" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <TextView
+        android:id="@+id/textView9"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="4dp"
+        android:text="Payment amount"
+
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/cardNameLayout"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.26" />
+
+    <TextView
+        android:id="@+id/Amount"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="$500.00"
+        android:textSize="60dp"
+        app:layout_constraintBottom_toTopOf="@+id/cardNameLayout"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/textView9"
+        app:layout_constraintTop_toBottomOf="@+id/textView9" />
+
+    <!--  payment amount -->
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

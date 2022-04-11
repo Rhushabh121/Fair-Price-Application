@@ -12,6 +12,7 @@ import android.widget.AdapterView;
 import android.widget.ListView;
 import android.widget.SearchView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import comp3350.fairprice.R;
 import comp3350.fairprice.application.Main;
@@ -24,6 +25,7 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.List;
 
 //This is the main page o the application that contains the list of posts.
@@ -49,8 +51,9 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         if (mainIntent != null) {
+            //check what intent it is
             String className = mainIntent.getStringExtra("class");
-            //new post stuff
+            //This is for new post activity
             if (className != null && className.equals("NPA")) {
 
                 String title = mainIntent.getStringExtra("title");
@@ -82,7 +85,7 @@ public class MainActivity extends AppCompatActivity {
 
         if (mainIntent != null) {
             String className = mainIntent.getStringExtra("class");
-
+//This is if the intent is from the Categories class
             if (className != null && className.equals("Categories")) {
                 String status = mainIntent.getStringExtra("status");
                 selectedCategory = status;
@@ -90,6 +93,36 @@ public class MainActivity extends AppCompatActivity {
                 filterList(status);
             }
         }
+
+
+
+        if (mainIntent != null) {
+            String className = mainIntent.getStringExtra("class");
+//This is if the intent is from the Payment class
+            if (className != null && className.equals("Bought")) {
+                int id = mainIntent.getIntExtra("id",0);
+                Post dPost = null;
+
+                //If an item is bought, grab the id and find the post
+                for (Post post : postList) {
+                    if(post.getPostId() == id ){
+                        dPost = post;
+                    }
+                }
+
+                if(dPost != null){
+       //If the item is found, delete it
+                    deletePost(dPost);
+                }else{
+                    //if the Item isn't found, (which should not be the case ever), let the user know
+                    Toast.makeText(MainActivity.this, "Item could not be purchased!", Toast.LENGTH_LONG).show();
+                }
+
+            }
+        }
+
+
+
         currentCategory=(TextView) findViewById(R.id.currentCategory);
         currentCategory.setText("Category: " + selectedCategory.toUpperCase());
 
@@ -103,12 +136,8 @@ public class MainActivity extends AppCompatActivity {
                 binding.deleteButton.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View view) {
-                        Post post = postList.get(i);
-                        accessPosts.deletePost(post);
-                        postList.clear();
-                        postList.addAll(accessPosts.getPosts());
-                        listAdapter.notifyDataSetChanged();
-                        binding.deleteButton.setEnabled(false);
+                        Post post= (Post) ((ListView) adapterView).getAdapter().getItem(i);
+                        deletePost( post);
                     }
                 });
 
@@ -119,17 +148,19 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public boolean onItemLongClick(AdapterView<?> adapterView, View view, int i, long l) {
                 Intent description = new Intent(MainActivity.this, Description.class);
-
+//This ensures the right object is grabbed from the list
                 Post post= (Post) ((ListView) adapterView).getAdapter().getItem(i);
                 String des = post.getDescription();
                 String title= post.getTitle();
                 String price = post.getPrice();
                 String category = post.getCategory();
+                int id =post.getPostId();
+
                 description.putExtra("price",price);
                 description.putExtra("title",title);
                 description.putExtra("Description",des);
                 description.putExtra("category",category);
-                description.putExtra("pos",i);
+                description.putExtra("id",id);
                 startActivity(description);
                 return false;
             }
@@ -137,7 +168,24 @@ public class MainActivity extends AppCompatActivity {
 
 
     }
-//When this method is activated by the newPost button, it goes to the newPostActivity
+//delete a post
+    public void deletePost(Post post){
+
+        searchView.setQuery("",false);
+        searchView.clearFocus();
+
+        accessPosts.deletePost(post);
+        postList.clear();
+        postList.addAll(accessPosts.getPosts());
+
+        ListAdapter listAdapter = new ListAdapter(MainActivity.this, postList);
+        binding.postList.setAdapter(listAdapter);
+        binding.postList.setClickable(true);
+
+        binding.deleteButton.setEnabled(false);
+    }
+
+        //When this method is activated by the newPost button, it goes to the newPostActivity
     public void buttonNewPost(View v) {
         Intent mainIntent = new Intent(this, NewPostActivity.class);
         startActivity(mainIntent);
@@ -154,7 +202,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void searchItem() {
-
+//Find a post from the postLists using the search bar
         searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
             @Override
             public boolean onQueryTextSubmit(String s) {
@@ -181,6 +229,7 @@ public class MainActivity extends AppCompatActivity {
                 }
 
                 ListAdapter listAdapter = new ListAdapter(MainActivity.this, filteredPosts);
+                listAdapter.notifyDataSetChanged();
                 binding.postList.setAdapter(listAdapter);
                 binding.postList.setClickable(true);
 
@@ -192,7 +241,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void filterList(String status) {
-
+//Filter the posts based on the category
         selectedCategory = status;
         currentCategory=(TextView) findViewById(R.id.currentCategory);
         currentCategory.setText("Category: " + selectedCategory.toUpperCase());

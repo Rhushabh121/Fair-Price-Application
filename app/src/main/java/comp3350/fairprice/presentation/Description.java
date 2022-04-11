@@ -6,11 +6,13 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import comp3350.fairprice.R;
 
 public class Description extends AppCompatActivity {
-
+        String price;
+        int id;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -18,7 +20,9 @@ public class Description extends AppCompatActivity {
         Intent thisIntent = getIntent();
         String description = thisIntent.getStringExtra("Description");
         String title = thisIntent.getStringExtra("title");
-        String price = thisIntent.getStringExtra("price");
+         price = thisIntent.getStringExtra("price");
+         id = thisIntent.getIntExtra("id",0);
+
         String category = thisIntent.getStringExtra("category");
 
         TextView des = findViewById(R.id.description);
@@ -31,6 +35,14 @@ public class Description extends AppCompatActivity {
         des.setText(description);
         categories.setText("Category: " + category);
 
+    }
+
+    public void clickBuy(View v) {
+        Intent mainIntent = new Intent(this, payment.class);
+        mainIntent.putExtra("price",price);
+        mainIntent.putExtra("id",id);
+
+        startActivity(mainIntent);
     }
 
 }
