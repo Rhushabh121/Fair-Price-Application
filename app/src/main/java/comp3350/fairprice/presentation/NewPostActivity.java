@@ -31,6 +31,7 @@ public class NewPostActivity extends AppCompatActivity {
         myAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         spinner.setAdapter(myAdapter);
     }
+
 //The method runs when the createPost button is clicked
     public void buttonCreatePost(View v) {
         //store the input passed by the user
