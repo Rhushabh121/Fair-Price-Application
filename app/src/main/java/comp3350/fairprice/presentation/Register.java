@@ -6,6 +6,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
+import android.widget.Spinner;
 
 import comp3350.fairprice.R;
 import comp3350.fairprice.presentation.HomepageActivity;
@@ -13,6 +14,7 @@ import comp3350.fairprice.presentation.Welcome;
 
 
 public class Register extends AppCompatActivity {
+    Spinner spinner;
 
     public static final String EXTRA_MESSAGE = "com.example.myfirstapp.MESSAGE";
 
@@ -33,15 +35,21 @@ public class Register extends AppCompatActivity {
      */
     public void validate(View view) {
 
-        Intent intent = new Intent(this, Welcome.class);
+        //store the input passed by the user
+        String username = ((EditText)findViewById(R.id.editTextTextPersonName4)).getText().toString();
+        String password = ((EditText)findViewById(R.id.editTextTextPersonName5)).getText().toString();
 
-        // get inputs from username and password fields
-        EditText username = (EditText) findViewById(R.id.editTextTextPersonName4);
-        EditText password = (EditText) findViewById(R.id.editTextTextPersonName5);
+
+        //send it to the main activity so it can be shown
+        Intent intent = new Intent(this, Welcome.class);
+        intent.putExtra("username", username);
+        intent.putExtra("password", password);
+
+
         String message = "";
         if(username.length() != 0 && password.length() != 0) {
-             message = "Username: \t" + username.getText().toString() + "\nPassword: \t"
-                    + password.getText().toString() + "\n\nYour account has been successfully created.";
+             message = "Username: \t" + username + "\nPassword: \t"
+                    + password + "\n\nYour account has been successfully created.";
         }
         else {
             message = "Unable to create the account.\nUsername and password did not meet specification";
