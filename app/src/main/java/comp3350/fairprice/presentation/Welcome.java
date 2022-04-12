@@ -8,6 +8,7 @@ import android.view.View;
 import android.widget.SearchView;
 import android.widget.TextView;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import comp3350.fairprice.R;
@@ -62,6 +63,9 @@ public class Welcome extends AppCompatActivity {
                 accessUsers.addUser(user);          //// change the parameter to User object
             }
         }
+
+        userList = new ArrayList<>();
+        userList.addAll(accessUsers.getUsers());
 
     }
 
