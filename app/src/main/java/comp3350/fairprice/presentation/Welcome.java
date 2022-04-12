@@ -5,9 +5,17 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.SearchView;
 import android.widget.TextView;
 
+import java.util.List;
+
 import comp3350.fairprice.R;
+import comp3350.fairprice.business.AccessPosts;
+import comp3350.fairprice.business.AccessUsers;
+import comp3350.fairprice.databinding.ActivityMainBinding;
+import comp3350.fairprice.objects.Post;
+import comp3350.fairprice.objects.User;
 import comp3350.fairprice.presentation.Register;
 
 
@@ -18,6 +26,12 @@ import comp3350.fairprice.presentation.Register;
  */
 
 public class Welcome extends AppCompatActivity {
+
+    private AccessUsers accessUsers;
+    private List<User> userList;
+    ActivityMainBinding binding;
+    SearchView searchView;
+    public static int userID = 0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -31,7 +45,26 @@ public class Welcome extends AppCompatActivity {
         // Capture the layout's TextView and set the string as its text
         TextView textView = findViewById(R.id.textView);
         textView.setText(message);
+
+
+        if (intent != null)
+        {
+
+            String username = intent.getStringExtra("username").toString();
+            String password = intent.getStringExtra("username").toString();
+
+            //This is for new post activity
+            if (username.length() != 0 && password.length() != 0)
+            {
+
+                User user = new User(Integer.toString(userID), username, "", password, "");
+                userID++;
+                accessUsers.addUser(user);          //// change the parameter to User object
+            }
+        }
+
     }
+
 
 
     /**
