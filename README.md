@@ -201,4 +201,4 @@ git flow hotfix finish hotfix_branch
 ![title](Images/reference2.png)
 
 
-## [WorkSheet.md Link](https://code.cs.umanitoba.ca/winter-2022-a01/group-8/fair-price/-/blob/main/worksheet.md)
+## [WorkSheet2.md Link](https://code.cs.umanitoba.ca/winter-2022-a01/group-8/fair-price/-/blob/main/i2_worksheet.md)

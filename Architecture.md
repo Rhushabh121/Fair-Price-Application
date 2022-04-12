@@ -4,38 +4,91 @@
 
 
 
-![FinalDG](./Images/FinalDG.png)
+![title](Images/Architecture.jpeg)
 
 ## **Presentation/Interface Layer**
 
-##### MainActivity: 
+##### MainActivity
 
 The main page of the application which containslist of the posts.
 
-##### NewPostActivity: 
+##### NewPostActivity 
 
 The new post activity will let user allows the add their post.
 
-##### ListAdapter: 
+##### ListAdapter
 
 This class is for maintining the list items.
 
+##### Welcome
+
+The landing page for the user onces he logs in to the profile or registers his profile for the first time.  
+
+##### Register
+
+The sign up page  to register a new user.
+
+##### Login
+
+The Login page for User to login to his profile.
+
+##### HomepageActivity 
+
+The main page for the application where user can go to different pages directly with click of a button. 
+
+##### Categories
+
+This class where user can find the posts according to their cagegories, it is kind of like advance search feature.
+
+##### Description 
 
 
 ## **Business/Logic Layer**
 
-##### AccessPosts: 
+##### AccessPosts 
 
-The hard coded data about the posts are in this class and it will be accessed in main activity.
+From this class the access of the database is done, this will access the Post object data from the database
 
+##### AccessPU 
 
+From this class the access of the database is done, this will access the PU object data from  the database
+
+##### AccessUsers 
+
+From this class the access of the database is done, this will access the User object data from the database
+
+##### Main 
+
+This class gives database part to all other classes.
+
+##### Services
+
+This class gets persistence of all the object classes. 
+
+## **Persistence**
+
+##### PostPersistenceHSQLDB
+
+This class implements the interface of the PostPersistence and connects to the database
+
+##### PUPersistenceHSQLDB
+
+This class implements the interface of the PUPersistence and connects to the database
+
+##### UserPersistenceHSQLDB
+
+This class implements the interface of the UserPersistence and connects to the database
 
 ## **Domain Objects**
 
-##### Posts:
+##### Posts
 
 The class is for object of post, it will be needed when adding a post in the list.
 
-##### User: 
+##### User 
 
 The class is User object it will be needed while saving a user in the database.
+
+##### PU
+
+This class is a PostUser object it deals with pirticular user and their posts. this will be in iteration 3

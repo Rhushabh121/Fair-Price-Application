@@ -6,4 +6,13 @@
     <string name="user_name">Enter Username</string>
     <string name="user_password">Password</string>
     <string name="button_signin">Signin</string>
+    <string name="categories">Categories</string>
+    <string name="category_1">Vehicles</string>
+    <string name="category_2">Electronics</string>
+    <string name="category_3">Video Games</string>
+    <string name="category_4">Clothing</string>
+    <string name="category_5">Books</string>
+    <string name="category_6">Furnitures</string>
+    <string name="category_7">Miscellaneous</string>
+    <string name="expand_all">Expand All</string>
 </resources>

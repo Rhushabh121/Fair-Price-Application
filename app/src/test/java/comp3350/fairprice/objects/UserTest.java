@@ -13,10 +13,11 @@ public class UserTest {
 
         System.out.println("\nStarting testUser");
         //check if the user is instantiated
-        user= new User("Bob", "BobbyD@gmail.com", "BobbyisCool", "15210094");
+        user= new User("user1", "Bob","BobbyD@gmail.com", "BobbyisCool", "15210094");
 
         assertNotNull(user);
         //check if the parameters are set to the right things
+        assertTrue("user1".equals(user.getUserId()));
         assertTrue("Bob".equals(user.getName()));
         assertTrue("BobbyD@gmail.com".equals(user.getEmail()));
         assertTrue("BobbyisCool".equals(user.getPassword()));

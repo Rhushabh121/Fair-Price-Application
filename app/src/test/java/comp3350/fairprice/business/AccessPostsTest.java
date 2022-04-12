@@ -1,26 +1,44 @@
 package comp3350.fairprice.business;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertNotNull;
+import static org.junit.Assert.assertTrue;
+import static org.mockito.Mockito.mock;
+import static org.mockito.Mockito.verify;
+import static org.mockito.Mockito.when;
 
-import org.junit.Test;
+import org.junit.Before;
+import org.junit.jupiter.api.Test;
+
+import java.util.ArrayList;
+import java.util.List;
 
 import comp3350.fairprice.objects.Post;
+import comp3350.fairprice.objects.User;
+import comp3350.fairprice.persistence.PostPersistence;
+import comp3350.fairprice.persistence.PostPersistenceStub;
+import comp3350.fairprice.persistence.UserPersistenceStub;
 
 public class AccessPostsTest {
-//Test if the database works well
-    @Test
-    public void testAccessPosts() {
-        AccessPosts accessPosts;
+    //private AccessPosts accessPosts;
+    private PostPersistence postPersistence;
 
-        System.out.println("\nStarting testAccessPosts");
-//test if the arrayList is created
-        accessPosts = new AccessPosts();
-        assertNotNull(accessPosts);
-
-        Post newPost = new Post("Title", "Description", 10);
-        accessPosts.addPost(newPost);
-//test if the post is added to the database
-        assertTrue(newPost.equals(accessPosts.getPosts().get(accessPosts.getPosts().size()-1)));
-
+    @Before
+    public void setUp() {
+        //this.accessPosts = new AccessPosts(new PostPersistenceStub());
+        this.postPersistence = new PostPersistenceStub();
     }
+
+    @Test
+    public void test1() {
+
+        final Post post;
+        postPersistence = new PostPersistenceStub();
+        assertNotNull(postPersistence);
+        post = postPersistence.getPostList().get(0);
+        assertNotNull(post);
+        assertTrue(1 == post.getPostId());
+    }
+
+
 }

@@ -12,11 +12,12 @@ public class PostTest {
 
         System.out.println("\nStarting testPost");
         //check if the post is instantiated
-        post = new Post("Title", "Description", 10);
+        post = new Post(1,"Title", "Description", 10, "category");
         assertNotNull(post);
         //check if the parameters are set to the right things
         assertTrue("Title".equals(post.getTitle()));
         assertTrue("Description".equals(post.getDescription()));
+        assertTrue("category".equals(post.getCategory()));
         System.out.println(post.getPrice());
         assertTrue("$10.00".equals(post.getPrice()));
 
