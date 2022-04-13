@@ -10,6 +10,8 @@ import android.widget.TextView;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.ArrayList;
+import java.util.Iterator;
 
 import comp3350.fairprice.R;
 import comp3350.fairprice.business.AccessPosts;
@@ -39,7 +41,7 @@ public class Welcome extends AppCompatActivity {
         setContentView(R.layout.activity_welcome);
 
         // Get the Intent that started this activity and extract the string
-        Intent loginOrRegisterIntent = this.getIntent();
+        Intent loginOrRegisterIntent = getIntent();
         String message = loginOrRegisterIntent.getStringExtra("message");
 
 
@@ -47,8 +49,8 @@ public class Welcome extends AppCompatActivity {
         if (loginOrRegisterIntent != null)
         {
 
-            String username = loginOrRegisterIntent.getStringExtra("username").toString();
-            String password = loginOrRegisterIntent.getStringExtra("password").toString();
+            String username = loginOrRegisterIntent.getStringExtra("username");
+            String password = loginOrRegisterIntent.getStringExtra("password");
 
             //This is for new post activity
             if (username.length() != 0 && password.length() != 0)
