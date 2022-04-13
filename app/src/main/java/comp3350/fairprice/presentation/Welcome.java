@@ -31,7 +31,6 @@ public class Welcome extends AppCompatActivity {
     private AccessUsers accessUsers;
     private List<User> userList;
     ActivityMainBinding binding;
-    SearchView searchView;
     public static int userID = 0;
 
     @Override

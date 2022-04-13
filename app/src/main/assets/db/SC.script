@@ -10,12 +10,6 @@ GRANT DBA TO SA
 SET WRITE_DELAY 20
 SET FILES SCALE 32
 SET SCHEMA PUBLIC
-INSERT INTO POSTS VALUES(1, 'TV', 'Panasonic. 55 inch', 99, 'Electronics')
-INSERT INTO POSTS VALUES(2, 'Jacket', 'Only worn once ', 70, 'Clothing')
-INSERT INTO POSTS VALUES(3, 'Xbox One', 'Got the newest xbox. getting rid of my old one ', 350, 'Video Games')
-INSERT INTO POSTS VALUES(4, 'Blue Pen', 'Used by Biden', 1000, 'Miscellaneous')
-INSERT INTO POSTS VALUES(5, 'Ford-150', 'Too big', 27000, 'Vehicles')
-INSERT INTO POSTS VALUES(6, 'Hunger Games', 'Great Ending!', 20, 'Books')
-INSERT INTO POSTS VALUES(7, 'Table', 'Antique piece ', 99, 'Furnitures')
+INSERT INTO POSTS VALUES(1, 'TV', 'Panasonic. 55 inch', 99, 'all')
 INSERT INTO USERS VALUES('jon305', 'jon', 'jonspassword', 'jon@gmail.com')
 INSERT INTO USERPOSTS VALUES(1, 'jon305', '2022-03-01')
