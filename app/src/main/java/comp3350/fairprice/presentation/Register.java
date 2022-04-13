@@ -41,9 +41,9 @@ public class Register extends AppCompatActivity {
 
 
         //send it to the main activity so it can be shown
-        Intent intent = new Intent(this, Welcome.class);
-        intent.putExtra("username", username);
-        intent.putExtra("password", password);
+        Intent registerIntent = new Intent(this, Welcome.class);
+        registerIntent.putExtra("username", username);
+        registerIntent.putExtra("password", password);
 
 
         String message = "";
@@ -54,8 +54,8 @@ public class Register extends AppCompatActivity {
         else {
             message = "Unable to create the account.\nUsername and password did not meet specification";
         }
-        intent.putExtra(EXTRA_MESSAGE, message);
-        startActivity(intent);
+        registerIntent.putExtra("message", message);
+        startActivity(registerIntent);
 
     }
 

@@ -39,19 +39,16 @@ public class Welcome extends AppCompatActivity {
         setContentView(R.layout.activity_welcome);
 
         // Get the Intent that started this activity and extract the string
-        Intent intent = getIntent();
-        String message = intent.getStringExtra(Login.EXTRA_MESSAGE);
-
-        // Capture the layout's TextView and set the string as its text
-        TextView textView = findViewById(R.id.textView);
-        textView.setText(message);
+        Intent loginOrRegisterIntent = this.getIntent();
+        String message = loginOrRegisterIntent.getStringExtra("message");
 
 
-        if (intent != null)
+
+        if (loginOrRegisterIntent != null)
         {
 
-            String username = intent.getStringExtra("username").toString();
-            String password = intent.getStringExtra("username").toString();
+            String username = loginOrRegisterIntent.getStringExtra("username").toString();
+            String password = loginOrRegisterIntent.getStringExtra("password").toString();
 
             //This is for new post activity
             if (username.length() != 0 && password.length() != 0)
@@ -62,6 +59,10 @@ public class Welcome extends AppCompatActivity {
                 accessUsers.addUser(user);          //// change the parameter to User object
             }
         }
+
+        // Capture the layout's TextView and set the string as its text
+        TextView textView = findViewById(R.id.textView);
+        textView.setText(message);
 
         userList = new ArrayList<>();
         userList.addAll(accessUsers.getUsers());
