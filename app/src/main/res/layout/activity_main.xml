@@ -103,6 +103,18 @@
             android:layout_marginBottom="4dp"
             android:text="Delete " />
 
+        <Button
+            android:id="@+id/button13"
+            android:layout_width="89dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginStart="161dp"
+            android:layout_marginEnd="26dp"
+            android:layout_marginBottom="27dp"
+            android:layout_toStartOf="@+id/deleteButton"
+            android:text="Profile" />
+
 
     </RelativeLayout>
 

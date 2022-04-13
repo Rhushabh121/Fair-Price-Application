@@ -19,6 +19,7 @@ import comp3350.fairprice.application.Main;
 import comp3350.fairprice.business.AccessPosts;
 import comp3350.fairprice.objects.Post;
 import comp3350.fairprice.databinding.ActivityMainBinding;
+import comp3350.fairprice.presentation.Welcome;
 
 import java.io.File;
 import java.io.FileWriter;
@@ -198,6 +199,11 @@ public class MainActivity extends AppCompatActivity {
 
     public void buttonCategories(View v) {
         Intent mainIntent = new Intent(this, Categories.class);
+        startActivity(mainIntent);
+    }
+
+    public void buttonProfile(View v) {
+        Intent mainIntent = new Intent(this, Welcome.class);
         startActivity(mainIntent);
     }
 

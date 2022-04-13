@@ -32,7 +32,6 @@ public class Welcome extends AppCompatActivity {
 
     private AccessUsers accessUsers;
     private List<User> userList;
-    ActivityMainBinding binding;
     public static int userID = 0;
 
     @Override
