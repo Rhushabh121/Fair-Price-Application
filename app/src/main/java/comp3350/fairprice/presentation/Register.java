@@ -5,16 +5,19 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
+import android.widget.ListView;
 import android.widget.Spinner;
 
 import comp3350.fairprice.R;
+import comp3350.fairprice.business.AccessUsers;
+import comp3350.fairprice.objects.User;
 import comp3350.fairprice.presentation.HomepageActivity;
 import comp3350.fairprice.presentation.Welcome;
 
 
 public class Register extends AppCompatActivity {
     Spinner spinner;
-
+    public static int userID = 0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -56,6 +59,29 @@ public class Register extends AppCompatActivity {
         registerIntent.putExtra("message", message);
 
         startActivity(registerIntent);
+
+
+
+        User user = new User(Integer.toString(userID), username,"", password, "");
+        String result;
+
+            try {
+                user = AccessUsers.addUser(user);
+
+                courseList = accessCourses.getCourses();
+                courseArrayAdapter.notifyDataSetChanged();
+                int pos = courseList.indexOf(course);
+                if (pos >= 0) {
+                    ListView listView = (ListView)findViewById(R.id.listCourses);
+                    listView.setSelection(pos);
+                }
+            }
+            catch (final Exception e) {
+                Messages.fatalError(this, e.getMessage());
+            }
+        } else {
+            Messages.warning(this, result);
+        }
 
     }
 
