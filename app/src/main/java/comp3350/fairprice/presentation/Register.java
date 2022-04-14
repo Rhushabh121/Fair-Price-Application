@@ -69,9 +69,7 @@ public class Register extends AppCompatActivity {
         registerIntent.putExtra("message", message);
 
 
-
-
-        User user = new User(Integer.toString(userID), username,"", password, "");
+        User user = new User("", username,"", password, "");
         String result;
 
         try {

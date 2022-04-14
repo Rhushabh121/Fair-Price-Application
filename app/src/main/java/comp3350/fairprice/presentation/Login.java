@@ -31,7 +31,8 @@ import comp3350.fairprice.presentation.HomepageActivity;
 
 
 public class Login extends AppCompatActivity {
-
+    private List<User> users;
+    AccessUsers accessUsers;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -72,7 +73,19 @@ public class Login extends AppCompatActivity {
         intent.putExtra("password", password.getText().toString());
         intent.putExtra("message", message);
 
-        startActivity(intent);
+        users = accessUsers.getUsers();
+        User user = new User("", username.getText().toString(),"", password.getText().toString(), "");
+
+        if(users.contains(user) == true)            // user exists
+        {
+            startActivity(intent);
+        }
+        else                            // take him back to home page
+        {
+            intent = new Intent(this, HomepageActivity.class);
+            startActivity(intent);
+        }
+
 
     }
 
