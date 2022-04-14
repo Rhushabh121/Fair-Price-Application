@@ -96,7 +96,6 @@ public class MainActivity extends AppCompatActivity {
         }
 
 
-
         if (mainIntent != null) {
             String className = mainIntent.getStringExtra("class");
 //This is if the intent is from the Payment class
