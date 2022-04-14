@@ -1,12 +1,29 @@
 package comp3350.fairprice.presentation;
 
 import androidx.appcompat.app.AppCompatActivity;
+
+import android.content.Context;
 import android.content.Intent;
+import android.content.res.AssetManager;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.EditText;
+import android.widget.SearchView;
+
+import java.io.File;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.util.List;
 
 import comp3350.fairprice.R;
+import comp3350.fairprice.application.Main;
+import comp3350.fairprice.business.AccessPosts;
+import comp3350.fairprice.business.AccessUsers;
+import comp3350.fairprice.databinding.ActivityMainBinding;
+import comp3350.fairprice.objects.Post;
+import comp3350.fairprice.objects.User;
 import comp3350.fairprice.presentation.Welcome;
 import comp3350.fairprice.presentation.HomepageActivity;
 
@@ -15,13 +32,12 @@ import comp3350.fairprice.presentation.HomepageActivity;
 
 public class Login extends AppCompatActivity {
 
-    public static final String EXTRA_MESSAGE = "com.example.myfirstapp.MESSAGE";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_login);
 
+        setContentView(R.layout.activity_login);
 
     }
 
@@ -70,4 +86,8 @@ public class Login extends AppCompatActivity {
         startActivity(intent);
 
     }
+
+
+
+
 }

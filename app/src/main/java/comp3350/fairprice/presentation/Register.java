@@ -15,7 +15,6 @@ import comp3350.fairprice.presentation.Welcome;
 public class Register extends AppCompatActivity {
     Spinner spinner;
 
-    public static final String EXTRA_MESSAGE = "com.example.myfirstapp.MESSAGE";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
