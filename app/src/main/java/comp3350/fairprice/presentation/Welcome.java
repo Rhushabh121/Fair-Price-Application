@@ -1,25 +1,14 @@
 package comp3350.fairprice.presentation;
-
 import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.SearchView;
 import android.widget.TextView;
-
 import java.util.ArrayList;
 import java.util.List;
-import java.util.ArrayList;
-import java.util.Iterator;
-
 import comp3350.fairprice.R;
-import comp3350.fairprice.business.AccessPosts;
 import comp3350.fairprice.business.AccessUsers;
-import comp3350.fairprice.databinding.ActivityMainBinding;
-import comp3350.fairprice.objects.Post;
 import comp3350.fairprice.objects.User;
-import comp3350.fairprice.presentation.Register;
 
 
 
@@ -40,7 +29,7 @@ public class Welcome extends AppCompatActivity {
         setContentView(R.layout.activity_welcome);
 
         // Get the Intent that started this activity and extract the string
-        Intent loginOrRegisterIntent = getIntent();
+        Intent loginOrRegisterIntent = this.getIntent();
         String message = loginOrRegisterIntent.getStringExtra("message");
 
 

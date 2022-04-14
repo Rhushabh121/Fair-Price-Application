@@ -1,7 +1,6 @@
 package comp3350.fairprice.presentation;
 
 import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -35,15 +34,13 @@ public class Register extends AppCompatActivity {
      */
     public void validate(View view) {
 
+        //send it to the main activity so it can be shown
+        Intent registerIntent = new Intent(this, Welcome.class);
+
         //store the input passed by the user
         String username = ((EditText)findViewById(R.id.editTextTextPersonName4)).getText().toString();
         String password = ((EditText)findViewById(R.id.editTextTextPersonName5)).getText().toString();
 
-
-        //send it to the main activity so it can be shown
-        Intent registerIntent = new Intent(this, Welcome.class);
-        registerIntent.putExtra("username", username);
-        registerIntent.putExtra("password", password);
 
 
         String message = "";
@@ -54,7 +51,11 @@ public class Register extends AppCompatActivity {
         else {
             message = "Unable to create the account.\nUsername and password did not meet specification";
         }
+
+        registerIntent.putExtra("username", username);
+        registerIntent.putExtra("password", password);
         registerIntent.putExtra("message", message);
+
         startActivity(registerIntent);
 
     }

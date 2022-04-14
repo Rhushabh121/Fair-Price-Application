@@ -42,6 +42,7 @@ public class Login extends AppCompatActivity {
         // get inputs from username and password fields
         EditText username = (EditText) findViewById(R.id.editTextTextPersonName);
         EditText password = (EditText) findViewById(R.id.editTextTextPersonName3);
+
         String message = "";
         if(username.length() != 0 && password.length() != 0) {
              message = "Username: \t"+username.getText().toString()+"\nPassword: \t"+password.getText().toString();
@@ -51,7 +52,10 @@ public class Login extends AppCompatActivity {
             message = "Unable to login the account.\nUsername or password does not exist.";
         }
 
-        intent.putExtra(EXTRA_MESSAGE, message);
+        intent.putExtra("username", username.getText().toString());
+        intent.putExtra("password", password.getText().toString());
+        intent.putExtra("message", message);
+
         startActivity(intent);
 
     }
