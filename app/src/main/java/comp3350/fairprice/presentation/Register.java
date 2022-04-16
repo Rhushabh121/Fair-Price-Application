@@ -101,8 +101,6 @@ public class Register extends AppCompatActivity {
         catch (final Exception e) {
 
         }
-
-
     }
 
     /**

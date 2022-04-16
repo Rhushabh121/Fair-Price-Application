@@ -88,7 +88,16 @@ public class Login extends AppCompatActivity {
                 if(users.get(i).getName().equalsIgnoreCase(username.getText().toString()))
                 {
                     found = true;
-                    startActivity(intent);
+                    if(users.get(i).getPassword().equalsIgnoreCase(password.getText().toString()))
+                    {
+                        startActivity(intent);
+                    }
+                    else
+                    {
+                        TextView displayMessage = findViewById(R.id.message);
+                        displayMessage.setText("Password does not match with username.");
+                    }
+
                 }
             }
         }
