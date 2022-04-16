@@ -8,6 +8,7 @@ import android.widget.ArrayAdapter;
 import android.widget.EditText;
 import android.widget.ListView;
 import android.widget.Spinner;
+import android.widget.TextView;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -24,8 +25,6 @@ public class Register extends AppCompatActivity {
 
     private AccessUsers accessUsers;
     private List<User> userList;
-
-    private ArrayAdapter<User> userArrayAdapter;
 
     private int selectedCoursePosition = -1;
     public static int userID = 0;
@@ -85,18 +84,18 @@ public class Register extends AppCompatActivity {
                     if(userList.get(i).getName().equalsIgnoreCase(username))
                     {
                         found = true;
-                        user = accessUsers.addUser(user);
-                        startActivity(registerIntent);
+                        TextView displayMessage = findViewById(R.id.message1);
+                        displayMessage.setText("Username already exists, enter unique username.");
                     }
                 }
             }
-            if(!found)              // take him back to home page
+
+            if(!found)              // allow him to enter his profile page
             {
-                registerIntent = new Intent(this, HomepageActivity.class);
+
+                user = accessUsers.addUser(user);
                 startActivity(registerIntent);
             }
-
-            userArrayAdapter.notifyDataSetChanged();
 
         }
         catch (final Exception e) {
