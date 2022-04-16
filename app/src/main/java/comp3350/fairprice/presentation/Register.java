@@ -71,7 +71,8 @@ public class Register extends AppCompatActivity {
         registerIntent.putExtra("message", message);
 
 
-        User user = new User("", username,"", password, "");
+        User user = new User(Integer.toString(userID), username,"", password, "");
+        userID++;
         String result;
         userList = accessUsers.getUsers();
 
@@ -92,11 +93,9 @@ public class Register extends AppCompatActivity {
 
             if(!found)              // allow him to enter his profile page
             {
-
                 user = accessUsers.addUser(user);
                 startActivity(registerIntent);
             }
-
         }
         catch (final Exception e) {
 
