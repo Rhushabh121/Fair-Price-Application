@@ -74,10 +74,28 @@ public class Register extends AppCompatActivity {
 
         User user = new User("", username,"", password, "");
         String result;
+        userList = accessUsers.getUsers();
 
         try {
-            user = accessUsers.addUser(user);
-            userList = accessUsers.getUsers();
+            boolean found = false;
+            if(userList.size() > 0)            // user exists
+            {
+                for(int i = 0; i < userList.size(); i++)
+                {
+                    if(userList.get(i).getName().equalsIgnoreCase(username))
+                    {
+                        found = true;
+                        user = accessUsers.addUser(user);
+                        startActivity(registerIntent);
+                    }
+                }
+            }
+            if(!found)              // take him back to home page
+            {
+                registerIntent = new Intent(this, HomepageActivity.class);
+                startActivity(registerIntent);
+            }
+
             userArrayAdapter.notifyDataSetChanged();
 
         }
@@ -85,7 +103,6 @@ public class Register extends AppCompatActivity {
 
         }
 
-        startActivity(registerIntent);
 
     }
 

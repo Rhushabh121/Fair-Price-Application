@@ -10,6 +10,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.SearchView;
+import android.widget.TextView;
 
 import java.io.File;
 import java.io.FileWriter;
@@ -93,8 +94,8 @@ public class Login extends AppCompatActivity {
         }
         if(!found)              // take him back to home page
         {
-            intent = new Intent(this, HomepageActivity.class);
-            startActivity(intent);
+            TextView displayMessage = findViewById(R.id.message);
+            displayMessage.setText("User does not exist, enter login details again.");
         }
     }
 
