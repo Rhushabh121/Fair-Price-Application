@@ -79,17 +79,23 @@ public class Login extends AppCompatActivity {
         users = accessUsers.getUsers();
         User user = new User("", username.getText().toString(),"", password.getText().toString(), "");
 
-        if(users.contains(user) == true)            // user exists
+        boolean found = false;
+        if(users.size() > 0)            // user exists
         {
+            for(int i = 0; i < users.size(); i++)
+            {
+                if(users.get(i).getName().equalsIgnoreCase(username.getText().toString()))
+                {
+                    found = true;
+                    startActivity(intent);
+                }
+            }
+        }
+        if(!found)              // take him back to home page
+        {
+            intent = new Intent(this, HomepageActivity.class);
             startActivity(intent);
         }
-//        else                            // take him back to home page
-//        {
-//            intent = new Intent(this, HomepageActivity.class);
-//            startActivity(intent);
-//        }
-
-
     }
 
     /**
