@@ -83,11 +83,11 @@ public class Login extends AppCompatActivity {
         {
             startActivity(intent);
         }
-        else                            // take him back to home page
-        {
-            intent = new Intent(this, HomepageActivity.class);
-            startActivity(intent);
-        }
+//        else                            // take him back to home page
+//        {
+//            intent = new Intent(this, HomepageActivity.class);
+//            startActivity(intent);
+//        }
 
 
     }
