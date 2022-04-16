@@ -15,6 +15,7 @@ import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.io.InputStreamReader;
+import java.util.ArrayList;
 import java.util.List;
 
 import comp3350.fairprice.R;
@@ -39,6 +40,8 @@ public class Login extends AppCompatActivity {
         super.onCreate(savedInstanceState);
 
         setContentView(R.layout.activity_login);
+        accessUsers = new AccessUsers();
+        users = new ArrayList<User>();
 
     }
 

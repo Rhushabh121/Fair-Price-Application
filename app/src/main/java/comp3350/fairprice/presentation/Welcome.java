@@ -28,6 +28,9 @@ public class Welcome extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_welcome);
 
+        accessUsers = new AccessUsers();
+        userList = new ArrayList<User>();
+
         // Get the Intent that started this activity and extract the string
         Intent loginOrRegisterIntent = this.getIntent();
         String message = loginOrRegisterIntent.getStringExtra("message");

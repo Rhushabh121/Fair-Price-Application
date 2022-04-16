@@ -9,6 +9,7 @@ import android.widget.EditText;
 import android.widget.ListView;
 import android.widget.Spinner;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import comp3350.fairprice.R;
@@ -33,6 +34,8 @@ public class Register extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_register);
+        accessUsers = new AccessUsers();
+        userList = new ArrayList<User>();
     }
 
     /**
