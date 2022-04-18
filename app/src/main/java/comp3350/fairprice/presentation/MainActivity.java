@@ -16,9 +16,13 @@ import android.widget.Toast;
 
 import comp3350.fairprice.R;
 import comp3350.fairprice.application.Main;
+import comp3350.fairprice.business.AccessPU;
 import comp3350.fairprice.business.AccessPosts;
+import comp3350.fairprice.business.AccessUsers;
+import comp3350.fairprice.objects.PU;
 import comp3350.fairprice.objects.Post;
 import comp3350.fairprice.databinding.ActivityMainBinding;
+import comp3350.fairprice.objects.User;
 import comp3350.fairprice.presentation.Welcome;
 
 import java.io.File;
@@ -33,7 +37,13 @@ import java.util.List;
 public class MainActivity extends AppCompatActivity {
 
     private AccessPosts accessPosts;
+    private AccessPU accessUserPosts;
+    private AccessUsers accessUsers;
+
     private List<Post> postList;
+    private List<PU> userPosts;
+    private List<User> userList;
+
     ActivityMainBinding binding;
     SearchView searchView;
 
@@ -48,8 +58,14 @@ public class MainActivity extends AppCompatActivity {
 
 
         Intent mainIntent = this.getIntent();
+
         accessPosts = new AccessPosts();
+        accessUserPosts = new AccessPU();
+        accessUsers = new AccessUsers();
+
+
         setContentView(R.layout.activity_main);
+
 
         if (mainIntent != null) {
             //check what intent it is
@@ -62,16 +78,31 @@ public class MainActivity extends AppCompatActivity {
                 String price = mainIntent.getStringExtra("price");
                 String category = mainIntent.getStringExtra("category");
 
+
+
                 if (title != null) {
                     accessPosts.addPost(title, description, Integer.parseInt(price), category);
+
                 }
             }
 
         }
 
+        String username = mainIntent.getStringExtra("username");
+        userList.addAll(accessUsers.getUsers());
+        String userID="";
+
+        for (int i = 0; i < userList.size(); i++)
+        {
+            if ( userList.get(i).getName().equalsIgnoreCase(username) )
+                userID = userList.get(i).getUserId();
+
+        }
 
         postList = new ArrayList<>();
         postList.addAll(accessPosts.getPosts());
+        userPosts = new ArrayList<>();
+        userPosts.addAll(accessUserPosts.getUP(userID));
 
 
         binding = ActivityMainBinding.inflate(getLayoutInflater());

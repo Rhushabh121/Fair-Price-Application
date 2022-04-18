@@ -39,6 +39,8 @@ public class NewPostActivity extends AppCompatActivity {
         String description = ((EditText)findViewById(R.id.NewPostDescription)).getText().toString();
         String price = ((EditText)findViewById(R.id.NewPostPrice)).getText().toString();
         String category = spinner.getSelectedItem().toString();
+        String username = ((EditText)findViewById(R.id.usernameIdentifier)).getText().toString();
+
 
         //send it to the main activity so it can be shown
         Intent newPostIntent = new Intent(this, MainActivity.class);
@@ -47,6 +49,8 @@ public class NewPostActivity extends AppCompatActivity {
         newPostIntent.putExtra("description", description);
         newPostIntent.putExtra("price", price);
         newPostIntent.putExtra("category", category);
+        newPostIntent.putExtra("username", username);
+
 
         startActivity(newPostIntent);
 
