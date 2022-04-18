@@ -55,10 +55,10 @@ public class PUPersistenceHSQLDB implements PUPersistence {
         }
         catch (final SQLException e)
         {
-            //throw new PersistenceException(e);
-            System.out.println(e);
+            throw new PersistenceException(e);
+            //System.out.println(e);
         }
-        return userPosts;
+        //return userPosts;
     }
 
 }

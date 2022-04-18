@@ -56,10 +56,10 @@ public class PostPersistenceHSQLDB implements PostPersistence {
         }
         catch (final SQLException e)
         {
-            //throw new PersistenceException(e);
-            Log.d("tester", e.toString());
+            throw new PersistenceException(e);
+            //Log.d("tester", e.toString());
         }
-        return posts;
+        //return posts;
     }
     public Post insertPost(Post post)
     {
@@ -76,10 +76,10 @@ public class PostPersistenceHSQLDB implements PostPersistence {
 
             return post;
         } catch (final SQLException e) {
-            //throw new PersistenceException(e);
-            Log.d("tester", e.toString());
+            throw new PersistenceException(e);
+            //Log.d("tester", e.toString());
         }
-        return post;
+        //return post;
     }
     public void deletePost(Post post)
     {
@@ -91,8 +91,8 @@ public class PostPersistenceHSQLDB implements PostPersistence {
             st.setInt(1, post.getPostId());
             st.executeUpdate();
         } catch (final SQLException e) {
-            //throw new PersistenceException(e);
-            Log.d("tester", e.toString());
+            throw new PersistenceException(e);
+            //Log.d("tester", e.toString());
         }
     }
 }

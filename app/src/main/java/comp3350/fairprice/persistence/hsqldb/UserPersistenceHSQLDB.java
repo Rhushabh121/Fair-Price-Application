@@ -48,10 +48,10 @@ public class UserPersistenceHSQLDB implements UserPersistence {
             return users;
         } catch (final SQLException e) {
             //will change this later
-            //throw new PersistenceException(e);
-            System.out.println(e);
+            throw new PersistenceException(e);
+            //System.out.println(e);
         }
-        return users;
+        //return users;
     }
 
     @Override
@@ -66,10 +66,10 @@ public class UserPersistenceHSQLDB implements UserPersistence {
             return user;
         } catch (final SQLException e) {
             //will change this later
-            //throw new PersistenceException(e);
-            System.out.println(e);
+            throw new PersistenceException(e);
+            //System.out.println(e);
         }
-        return user;
+        //return user;
     }
 
     @Override
@@ -83,7 +83,8 @@ public class UserPersistenceHSQLDB implements UserPersistence {
             st.executeUpdate();
         } catch (final SQLException e) {
             //will change this later
-            //throw new PersistenceException(e);
+            throw new PersistenceException(e);
+            //System.out.println(e);
         }
     }
 }

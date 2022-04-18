@@ -9,23 +9,25 @@ import comp3350.fairprice.persistence.PUPersistence;
 public class AccessPU {
     private PUPersistence dataAccess;
     private List<PU> elements;
-    private PU userPost;
-    private int currentUP;
+//    private PU userPost;
+//    private int currentUP;
 
     public AccessPU()
     {
         dataAccess = Services.getPuPersistence();
-        userPost = null;
-        currentUP = 0;
+        elements = null;
+//        userPost = null;
+//        currentUP = 0;
     }
     public AccessPU(final PUPersistence puPersistence)
     {
         this();
         this.dataAccess = puPersistence;
     }
-    public PU getUP(String userID)
+    public List<PU> getUP(String userID)
     {
        //for iteration_3
-        return null;
+        elements = dataAccess.getUP(userID);
+        return elements;
     }
 }
