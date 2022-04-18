@@ -71,13 +71,24 @@ public class MainActivity extends AppCompatActivity {
             //check what intent it is
             String className = mainIntent.getStringExtra("class");
             //This is for new post activity
-            if (className != null && className.equals("NPA")) {
-
+            if (className != null && className.equals("NPA"))
+            {
                 String title = mainIntent.getStringExtra("title");
                 String description = mainIntent.getStringExtra("description");
                 String price = mainIntent.getStringExtra("price");
                 String category = mainIntent.getStringExtra("category");
 
+                String username = mainIntent.getStringExtra("username");
+                userList.addAll(accessUsers.getUsers());
+                String userID="";
+
+                for (int i = 0; i < userList.size(); i++)
+                {
+                    if ( userList.get(i).getName().equalsIgnoreCase(username) )
+                        userID = userList.get(i).getUserId();
+                }
+                userPosts = new ArrayList<>();
+                userPosts.addAll(accessUserPosts.getUP(userID));
 
 
                 if (title != null) {
@@ -88,21 +99,9 @@ public class MainActivity extends AppCompatActivity {
 
         }
 
-        String username = mainIntent.getStringExtra("username");
-        userList.addAll(accessUsers.getUsers());
-        String userID="";
-
-        for (int i = 0; i < userList.size(); i++)
-        {
-            if ( userList.get(i).getName().equalsIgnoreCase(username) )
-                userID = userList.get(i).getUserId();
-
-        }
 
         postList = new ArrayList<>();
         postList.addAll(accessPosts.getPosts());
-        userPosts = new ArrayList<>();
-        userPosts.addAll(accessUserPosts.getUP(userID));
 
 
         binding = ActivityMainBinding.inflate(getLayoutInflater());
