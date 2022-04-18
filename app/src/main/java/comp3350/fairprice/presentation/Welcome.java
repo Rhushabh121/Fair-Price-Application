@@ -36,28 +36,10 @@ public class Welcome extends AppCompatActivity {
         String message = loginOrRegisterIntent.getStringExtra("message");
 
 
-
-        if (loginOrRegisterIntent != null)
-        {
-
-            String username = loginOrRegisterIntent.getStringExtra("username");
-            String password = loginOrRegisterIntent.getStringExtra("password");
-
-            //This is for new post activity
-            if (username.length() != 0 && password.length() != 0)
-            {
-
-                User user = new User(Integer.toString(userID), username, "", password, "");
-                userID++;
-                accessUsers.addUser(user);          //// change the parameter to User object
-            }
-        }
-
         // Capture the layout's TextView and set the string as its text
         TextView textView = findViewById(R.id.textView);
         textView.setText(message);
 
-        userList = new ArrayList<>();
         userList.addAll(accessUsers.getUsers());
 
     }

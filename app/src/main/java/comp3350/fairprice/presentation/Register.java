@@ -26,7 +26,6 @@ public class Register extends AppCompatActivity {
     private AccessUsers accessUsers;
     private List<User> userList;
 
-    private int selectedCoursePosition = -1;
     public static int userID = 0;
 
     @Override
@@ -78,7 +77,7 @@ public class Register extends AppCompatActivity {
 
         try {
             boolean found = false;
-            if(userList.size() > 0)            // user exists
+            if(userList.size() > 0)            // some users exists
             {
                 for(int i = 0; i < userList.size(); i++)
                 {
@@ -91,7 +90,7 @@ public class Register extends AppCompatActivity {
                 }
             }
 
-            if(!found)              // allow him to enter his profile page
+            if(!found)              // allow him to enter his profile page as username entered is unique
             {
                 user = accessUsers.addUser(user);
                 startActivity(registerIntent);
