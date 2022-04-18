@@ -61,6 +61,8 @@ public class MainActivity extends AppCompatActivity {
         accessUserPosts = new AccessPU();
         accessUsers = new AccessUsers();
 
+        userList = new ArrayList<>();
+        userPosts = new ArrayList<>();
 
         setContentView(R.layout.activity_main);
 
