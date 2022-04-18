@@ -75,5 +75,7 @@ public class Welcome extends AppCompatActivity {
      * @param view
      */
     public void myListings(View view) {
+        Intent intent = new Intent(this, MyListings.class);
+        startActivity(intent);
     }
 }
