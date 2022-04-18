@@ -1,10 +1,10 @@
 package comp3350.fairprice.presentation;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
+
+import androidx.appcompat.app.AppCompatActivity;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -36,22 +36,16 @@ public class MyListings extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_my_listings);
 
-        postList = new ArrayList<Post>();
-        userList = new ArrayList<User>();
-        puList = new ArrayList<PU>();
 
         accessPosts = new AccessPosts();
         accessUsers = new AccessUsers();
         accessPostsUsers = new AccessPU();
 
-        postList.addAll(accessPosts.getPosts());
-        binding = ActivityMainBinding.inflate(getLayoutInflater());
-        setContentView(binding.getRoot());
+        postList = new ArrayList<Post>();
+        userList = new ArrayList<User>();
+        puList = new ArrayList<PU>();
 
-        ListAdapter listAdapter = new ListAdapter(this, postList);
 
-        binding.postList.setAdapter(listAdapter);
-        binding.postList.setClickable(true);
     }
 
     public void getListings(View view)
