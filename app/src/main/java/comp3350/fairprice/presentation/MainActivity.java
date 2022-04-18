@@ -77,6 +77,7 @@ public class MainActivity extends AppCompatActivity {
                 String category = mainIntent.getStringExtra("category");
 
                 String username = mainIntent.getStringExtra("username");
+
                 userList.addAll(accessUsers.getUsers());
                 String userID="";
 
@@ -85,9 +86,10 @@ public class MainActivity extends AppCompatActivity {
                     if ( userList.get(i).getName().equalsIgnoreCase(username) )
                         userID = userList.get(i).getUserId();
                 }
-                userPosts = new ArrayList<>();
-                userPosts.addAll(accessUserPosts.getUP(userID));
 
+                userPosts = new ArrayList<>();
+                if(!userID.equalsIgnoreCase(""))
+                    userPosts.addAll(accessUserPosts.getUP(userID));
 
                 if (title != null) {
                     accessPosts.addPost(title, description, Integer.parseInt(price), category);

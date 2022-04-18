@@ -26,7 +26,6 @@ public class Register extends AppCompatActivity {
     private AccessUsers accessUsers;
     private List<User> userList;
 
-    public static int userID = 0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -70,8 +69,7 @@ public class Register extends AppCompatActivity {
         registerIntent.putExtra("message", message);
 
 
-        User user = new User(Integer.toString(userID), username,"", password, "");
-        userID++;
+        User user = new User(username, username,"", password, "");
         String result;
         userList = accessUsers.getUsers();
 
