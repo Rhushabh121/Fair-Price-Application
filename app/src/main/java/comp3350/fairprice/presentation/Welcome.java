@@ -68,4 +68,12 @@ public class Welcome extends AppCompatActivity {
 
     }
 
+    /**
+     * When the user clicks My Listings button, take him to the list of listings he posted on the app.
+     * Search from the collection of all PU objects, then find the username that matches with the user of
+     * an object from PU list, display all those listings.
+     * @param view
+     */
+    public void myListings(View view) {
+    }
 }

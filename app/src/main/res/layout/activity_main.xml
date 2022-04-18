@@ -111,9 +111,12 @@
             android:layout_alignParentBottom="true"
             android:layout_marginStart="161dp"
             android:layout_marginEnd="26dp"
+
             android:layout_marginBottom="27dp"
             android:layout_toStartOf="@+id/deleteButton"
-            android:text="Profile" />
+            android:onClick="openProfile"
+            android:text="Profile"
+            android:textSize="10sp" />
 
 
     </RelativeLayout>

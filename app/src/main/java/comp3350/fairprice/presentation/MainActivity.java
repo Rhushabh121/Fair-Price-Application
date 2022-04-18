@@ -1,7 +1,5 @@
 package comp3350.fairprice.presentation;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Context;
 import android.content.Intent;
 import android.content.res.AssetManager;
@@ -14,24 +12,24 @@ import android.widget.SearchView;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import comp3350.fairprice.R;
-import comp3350.fairprice.application.Main;
-import comp3350.fairprice.business.AccessPU;
-import comp3350.fairprice.business.AccessPosts;
-import comp3350.fairprice.business.AccessUsers;
-import comp3350.fairprice.objects.PU;
-import comp3350.fairprice.objects.Post;
-import comp3350.fairprice.databinding.ActivityMainBinding;
-import comp3350.fairprice.objects.User;
-import comp3350.fairprice.presentation.Welcome;
+import androidx.appcompat.app.AppCompatActivity;
 
 import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.ArrayList;
-import java.util.Iterator;
 import java.util.List;
+
+import comp3350.fairprice.R;
+import comp3350.fairprice.application.Main;
+import comp3350.fairprice.business.AccessPU;
+import comp3350.fairprice.business.AccessPosts;
+import comp3350.fairprice.business.AccessUsers;
+import comp3350.fairprice.databinding.ActivityMainBinding;
+import comp3350.fairprice.objects.PU;
+import comp3350.fairprice.objects.Post;
+import comp3350.fairprice.objects.User;
 
 //This is the main page o the application that contains the list of posts.
 public class MainActivity extends AppCompatActivity {
@@ -369,5 +367,10 @@ public class MainActivity extends AppCompatActivity {
                 in.close();
             }
         }
+    }
+
+    public void openProfile(View view) {
+        Intent openWelcomePage = new Intent(this, Welcome.class);
+        startActivity(openWelcomePage);
     }
 }
