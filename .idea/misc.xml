@@ -3,18 +3,10 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
-        <entry key="app/src/main/res/layout/activity_categories.xml" value="0.3890625" />
-        <entry key="app/src/main/res/layout/activity_description.xml" value="0.4036458333333333" />
-        <entry key="app/src/main/res/layout/activity_homepage.xml" value="0.26911444525415845" />
-        <entry key="app/src/main/res/layout/activity_login.xml" value="0.37037037037037035" />
-        <entry key="app/src/main/res/layout/activity_main.xml" value="0.25613098144531254" />
-        <entry key="app/src/main/res/layout/activity_my_listings.xml" value="0.4036458333333333" />
-        <entry key="app/src/main/res/layout/activity_new_post.xml" value="0.4955389855722043" />
-        <entry key="app/src/main/res/layout/activity_payment.xml" value="0.4036458333333333" />
-        <entry key="app/src/main/res/layout/activity_register.xml" value="0.36287587483723954" />
-        <entry key="app/src/main/res/layout/activity_welcome.xml" value="0.26959228515625" />
-        <entry key="app/src/main/res/layout/post_list_item.xml" value="0.3439651489257813" />
-        <entry key="app/src/main/res/layout/spinner_item.xml" value="0.4036458333333333" />
+        <entry key="..\:/Users/Ogunt/OneDrive/Desktop/COMP 3350/Final/fair-price/fair-price/app/src/main/res/layout/post_list_item.xml" value="0.20863616930312098" />
+        <entry key="..\:/Users/trung/STUDY/COMP3350/f3/fair-price (Missing Report)/fair-price/app/src/main/res/layout/activity_description.xml" value="0.22327898550724637" />
+        <entry key="..\:/Users/trung/STUDY/COMP3350/f3/fair-price (Missing Report)/fair-price/app/src/main/res/layout/activity_report.xml" value="0.22327898550724637" />
+        <entry key="..\:/Users/trung/STUDY/COMP3350/f3/fair-price (Missing Report)/fair-price/app/src/main/res/layout/activity_report_page.xml" value="0.22327898550724637" />
       </map>
     </option>
   </component>

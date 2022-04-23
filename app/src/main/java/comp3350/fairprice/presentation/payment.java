@@ -9,6 +9,7 @@ import android.content.Intent;
 import android.text.TextUtils;
 import android.view.View;
 import android.os.Bundle;
+import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -24,6 +25,8 @@ public class payment extends AppCompatActivity {
     TextInputLayout CVV;
     TextInputLayout postal;
     int id;
+    boolean isRepost;
+    String username;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -31,11 +34,23 @@ public class payment extends AppCompatActivity {
         setContentView(R.layout.activity_payment);
 //Get all the data from the post
         Intent thisIntent = getIntent();
+isRepost=false;
+        if (thisIntent != null) {
+            String className = thisIntent.getStringExtra("class");
+//This is if the intent is from the myListing class
+            if (className != null && className.equals("Repost")) {
+               Button buy = findViewById(R.id.btnBuyNow);
+               username=thisIntent.getStringExtra("username");
+                buy.setText("REPOST");
+                isRepost=true;
+            }
+        }
+
+
         String price = thisIntent.getStringExtra("price");
         id = thisIntent.getIntExtra("id",0);
         TextView amount = findViewById(R.id.Amount);
         amount.setText(price);
-
         name = findViewById(R.id.cardNameLayout);
         exp = findViewById(R.id.ExpLayout);
         cardNum = findViewById(R.id.cardNumberLayout);
@@ -87,11 +102,20 @@ public class payment extends AppCompatActivity {
                 @Override
                 public void onClick(DialogInterface dialogInterface, int i) {
                     dialogInterface.dismiss();
-                   Toast.makeText(payment.this, "Thank you for purchase", Toast.LENGTH_LONG).show();
+                    if(!isRepost){
+                        Toast.makeText(payment.this, "Thank you for purchase", Toast.LENGTH_LONG).show();
 
-                    buyIntent.putExtra("class", "Bought");
-                    buyIntent.putExtra("id", id);
-                    startActivity(buyIntent);
+                        buyIntent.putExtra("class", "Bought");
+                        buyIntent.putExtra("id", id);
+                        startActivity(buyIntent);
+                    }else{
+                        Toast.makeText(payment.this, "Item has been Reposted!", Toast.LENGTH_LONG).show();
+
+                        buyIntent.putExtra("class", "Repost");
+                        buyIntent.putExtra("id", id);
+                        buyIntent.putExtra("username", username);
+                        startActivity(buyIntent);
+                    }
 
                 }
             });

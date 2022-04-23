@@ -19,6 +19,7 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 import comp3350.fairprice.R;
@@ -46,7 +47,7 @@ public class MainActivity extends AppCompatActivity {
     SearchView searchView;
 
     private String selectedCategory = "all";
-    private String currentSearchText ="";
+    private String currentSearchText = "";
     TextView currentCategory;
 
     @Override
@@ -71,8 +72,7 @@ public class MainActivity extends AppCompatActivity {
             //check what intent it is
             String className = mainIntent.getStringExtra("class");
             //This is for new post activity
-            if (className != null && className.equals("NPA"))
-            {
+            if (className != null && className.equals("NPA")) {
                 String title = mainIntent.getStringExtra("title");
                 String description = mainIntent.getStringExtra("description");
                 String price = mainIntent.getStringExtra("price");
@@ -80,23 +80,35 @@ public class MainActivity extends AppCompatActivity {
 
                 String username = mainIntent.getStringExtra("username");
 
-                userList.addAll(accessUsers.getUsers());
-                String userID="";
+                //create a userPost
 
-                for (int i = 0; i < userList.size(); i++)
-                {
-                    if ( userList.get(i).getName().equalsIgnoreCase(username) )
+
+                userList.addAll(accessUsers.getUsers());
+                String userID = "";
+                User addUser = null;
+                Post addPost = null;
+
+                if (title != null) {
+                    addPost = accessPosts.addPost(title, description, Integer.parseInt(price), category);
+
+                }
+
+                for (int i = 0; i < userList.size(); i++) {
+                    if (userList.get(i).getName().equalsIgnoreCase(username)) {
                         userID = userList.get(i).getUserId();
+                        addUser = userList.get(i);
+
+                    }
                 }
 
                 userPosts = new ArrayList<>();
-                if(!userID.equalsIgnoreCase(""))
-                    userPosts.addAll(accessUserPosts.getUP(userID));
+             //   if (!userID.equalsIgnoreCase("") && title != null)
 
-                if (title != null) {
-                    accessPosts.addPost(title, description, Integer.parseInt(price), category);
+                    accessUserPosts.addPU(addPost, addUser, "2022-03-01");
+                userPosts.addAll(accessUserPosts.getUP(userID));
 
-                }
+
+
             }
 
         }
@@ -104,7 +116,8 @@ public class MainActivity extends AppCompatActivity {
 
         postList = new ArrayList<>();
         postList.addAll(accessPosts.getPosts());
-
+        Collections.reverse(postList);
+        //binding.postList.smoothScrollToPosition(0);
 
         binding = ActivityMainBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
@@ -113,7 +126,7 @@ public class MainActivity extends AppCompatActivity {
 
         binding.postList.setAdapter(listAdapter);
         binding.postList.setClickable(true);
-        searchView=  findViewById(R.id.searchItem);
+        searchView = findViewById(R.id.searchItem);
         searchItem();
 
         if (mainIntent != null) {
@@ -127,97 +140,122 @@ public class MainActivity extends AppCompatActivity {
             }
         }
 
-
+//for repost
         if (mainIntent != null) {
             String className = mainIntent.getStringExtra("class");
 //This is if the intent is from the Payment class
-            if (className != null && className.equals("Bought")) {
-                int id = mainIntent.getIntExtra("id",0);
+            if (className != null && className.equals("Repost") ) {
+                int id = mainIntent.getIntExtra("id", 0);
+                String username = mainIntent.getStringExtra("username");
+                Post dPost = null;
+                userList.addAll(accessUsers.getUsers());
+                //If an item is to be reposted, grab the id and find the post
+                for (Post post : postList) {
+                    if (post.getPostId() == id) {
+                        dPost = post;
+                    }
+                }
+//create a new post
+                Post addPost = accessPosts.addPost(dPost.getTitle(), dPost.getDescription(), dPost.getPrice1(), dPost.getCategory());
+
+                //delete the old post
+                if (dPost != null) {
+                    //If the item is found, delete it
+                    deletePost(dPost);
+                }
+                //create the user post
+                User addUser = null;
+                for (int i = 0; i < userList.size(); i++) {
+                    if (userList.get(i).getName().equalsIgnoreCase(username)) {
+                        addUser = userList.get(i);
+
+                    }
+                }
+
+                accessUserPosts.addPU(addPost, addUser, "");
+                userPosts.addAll(accessUserPosts.getUP(username));
+            }
+        }
+        if (mainIntent != null) {
+            String className = mainIntent.getStringExtra("class");
+//This is if the intent is from the Payment class
+            if ((className != null && className.equals("Bought") ) || (className != null && className.equals("Deleted") ) ) {
+                int id = mainIntent.getIntExtra("id", 0);
                 Post dPost = null;
 
                 //If an item is bought, grab the id and find the post
                 for (Post post : postList) {
-                    if(post.getPostId() == id ){
+                    if (post.getPostId() == id) {
                         dPost = post;
                     }
                 }
 
-                if(dPost != null){
-       //If the item is found, delete it
+                if (dPost != null) {
+                    //If the item is found, delete it
                     deletePost(dPost);
-                }else{
+                } else {
                     //if the Item isn't found, (which should not be the case ever), let the user know
-                    Toast.makeText(MainActivity.this, "Item could not be purchased!", Toast.LENGTH_LONG).show();
+                    if(className.equals("Bought")) {
+                        Toast.makeText(MainActivity.this, "Item could not be purchased!", Toast.LENGTH_LONG).show();
+                    } else if (className.equals("Deleted")) {
+                        Toast.makeText(MainActivity.this, "Item could not be Deleted!", Toast.LENGTH_LONG).show();
+
+                    }
                 }
 
             }
         }
 
 
-
-        currentCategory=(TextView) findViewById(R.id.currentCategory);
+        currentCategory = (TextView) findViewById(R.id.currentCategory);
         currentCategory.setText("Category: " + selectedCategory.toUpperCase());
+
 
 
 
         binding.postList.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
-                binding.deleteButton.setEnabled(true);
-
-                binding.deleteButton.setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View view) {
-                        Post post= (Post) ((ListView) adapterView).getAdapter().getItem(i);
-                        deletePost( post);
-                    }
-                });
-
-            }
-        });
-
-        binding.postList.setOnItemLongClickListener(new AdapterView.OnItemLongClickListener() {
-            @Override
-            public boolean onItemLongClick(AdapterView<?> adapterView, View view, int i, long l) {
                 Intent description = new Intent(MainActivity.this, Description.class);
 //This ensures the right object is grabbed from the list
-                Post post= (Post) ((ListView) adapterView).getAdapter().getItem(i);
+                Post post = (Post) ((ListView) adapterView).getAdapter().getItem(i);
                 String des = post.getDescription();
-                String title= post.getTitle();
+                String title = post.getTitle();
                 String price = post.getPrice();
                 String category = post.getCategory();
-                int id =post.getPostId();
-
-                description.putExtra("price",price);
-                description.putExtra("title",title);
-                description.putExtra("Description",des);
-                description.putExtra("category",category);
-                description.putExtra("id",id);
+                int id = post.getPostId();
+                description.putExtra("class", "Main");
+                description.putExtra("price", price);
+                description.putExtra("title", title);
+                description.putExtra("Description", des);
+                description.putExtra("category", category);
+                description.putExtra("id", id);
                 startActivity(description);
-                return false;
+
             }
         });
 
 
     }
-//delete a post
-    public void deletePost(Post post){
 
-        searchView.setQuery("",false);
+    //delete a post
+    public void deletePost(Post post) {
+
+        searchView.setQuery("", false);
         searchView.clearFocus();
 
         accessPosts.deletePost(post);
         postList.clear();
         postList.addAll(accessPosts.getPosts());
+        Collections.reverse(postList);
 
         ListAdapter listAdapter = new ListAdapter(MainActivity.this, postList);
         binding.postList.setAdapter(listAdapter);
         binding.postList.setClickable(true);
 
-        binding.deleteButton.setEnabled(false);
     }
 
-        //When this method is activated by the newPost button, it goes to the newPostActivity
+    //When this method is activated by the newPost button, it goes to the newPostActivity
     public void buttonNewPost(View v) {
         Intent mainIntent = new Intent(this, NewPostActivity.class);
         startActivity(mainIntent);
@@ -249,7 +287,7 @@ public class MainActivity extends AppCompatActivity {
 
             @Override
             public boolean onQueryTextChange(String s) {
-                currentSearchText=s;
+                currentSearchText = s;
                 ArrayList<Post> filteredPosts = new ArrayList<Post>();
 
                 for (Post post : postList) {
@@ -280,17 +318,16 @@ public class MainActivity extends AppCompatActivity {
     private void filterList(String status) {
 //Filter the posts based on the category
         selectedCategory = status;
-        currentCategory=(TextView) findViewById(R.id.currentCategory);
+        currentCategory = (TextView) findViewById(R.id.currentCategory);
         currentCategory.setText("Category: " + selectedCategory.toUpperCase());
 
         ArrayList<Post> filteredPosts = new ArrayList<Post>();
         for (Post post : postList) {
             if (post.getCategory().toLowerCase().contains(status)) {
 
-                if(currentSearchText == ""){
+                if (currentSearchText == "") {
                     filteredPosts.add(post);
-                }
-                else{
+                } else {
                     if (post.getCategory().toLowerCase().contains(currentSearchText.toLowerCase())) {
                         filteredPosts.add(post);
                     }
@@ -308,11 +345,11 @@ public class MainActivity extends AppCompatActivity {
 
     public void allItems(View v) {
         selectedCategory = "all";
-        searchView.setQuery("",false);
+        searchView.setQuery("", false);
         searchView.clearFocus();
 
 
-        currentCategory=(TextView) findViewById(R.id.currentCategory);
+        currentCategory = (TextView) findViewById(R.id.currentCategory);
         currentCategory.setText("Category: " + selectedCategory.toUpperCase());
 
         ListAdapter listAdapter = new ListAdapter(MainActivity.this, postList);

@@ -78,7 +78,7 @@ public class Login extends AppCompatActivity {
         intent.putExtra("message", message);
 
         users = accessUsers.getUsers();
-        User user = new User("", username.getText().toString(),"", password.getText().toString(), "");
+        User user = new User(username.getText().toString(), username.getText().toString(),"", password.getText().toString(), "");
 
         boolean found = false;
         if(users.size() > 0)            // user exists

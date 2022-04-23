@@ -37,6 +37,7 @@ public class Welcome extends AppCompatActivity {
         String message = loginOrRegisterIntent.getStringExtra("message");
 
 
+
         // Capture the layout's TextView and set the string as its text
         TextView textView = findViewById(R.id.textView);
         textView.setText(message);
@@ -63,7 +64,6 @@ public class Welcome extends AppCompatActivity {
      * @param view
      */
     public void openExplore(View view) {
-
         Intent intent = new Intent(this, MainActivity.class);
         startActivity(intent);
 
@@ -76,7 +76,14 @@ public class Welcome extends AppCompatActivity {
      * @param view
      */
     public void myListings(View view) {
+        Intent loginOrRegisterIntent = this.getIntent();
+        String username = loginOrRegisterIntent.getStringExtra("username");
+        String password = loginOrRegisterIntent.getStringExtra("password");
+        String message = loginOrRegisterIntent.getStringExtra("message");
         Intent intent = new Intent(this, MyListings.class);
+        intent.putExtra("username",username);
+        intent.putExtra("password",password);
+        intent.putExtra("message",message);
         startActivity(intent);
     }
 }
