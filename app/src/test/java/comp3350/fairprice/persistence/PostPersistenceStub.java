@@ -14,10 +14,10 @@ public class PostPersistenceStub implements PostPersistence{
     {
         posts = new ArrayList<>();
 
-        posts.add(new Post(1,"Car","Tesla",20));
-        posts.add(new Post(2,"book","the alchemist",20));
-        posts.add(new Post(3,"mobile","google pixel 6 pro",20));
-        posts.add(new Post(4,"Car","ford model T",20));
+        posts.add(new Post(1,"Car","Tesla",20, "vehicles"));
+        posts.add(new Post(2,"book","the alchemist",20, "books"));
+        posts.add(new Post(3,"mobile","google pixel 6 pro",20, "electronics"));
+        posts.add(new Post(4,"Car","ford model T",20, "vehicles"));
     }
 
     @Override

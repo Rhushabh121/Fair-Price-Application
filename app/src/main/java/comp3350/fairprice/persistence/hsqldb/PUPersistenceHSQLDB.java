@@ -1,6 +1,9 @@
 //used sample project
 package comp3350.fairprice.persistence.hsqldb;
 
+import android.util.Log;
+import android.widget.Toast;
+
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
@@ -28,12 +31,14 @@ public class PUPersistenceHSQLDB implements PUPersistence {
     private PU fromResultSet(final ResultSet rs) throws SQLException {
         final String rsUserID = rs.getString("userID");
         final int postId = rs.getInt("postID");
-        final String date = rs.getString("grade");
+        final String Ddate = rs.getString("postDate");
 
         final User user = new User(rsUserID);
         final Post post = new Post(postId);
+        final String date = Ddate;
         return new PU(user, post, date);
     }
+    @Override
     public List<PU> getUP(String userId)
     {
         final List<PU> userPosts = new ArrayList<>();
@@ -55,10 +60,31 @@ public class PUPersistenceHSQLDB implements PUPersistence {
         }
         catch (final SQLException e)
         {
-            //throw new PersistenceException(e);
-            System.out.println(e);
+            throw new PersistenceException(e);
+            //System.out.println(e);
         }
-        return userPosts;
+        //return userPosts;
+    }
+
+
+    public PU insertPU(PU pu)
+    {
+        try (final Connection c = connection()) {
+            final PreparedStatement st = c.prepareStatement("INSERT INTO userposts VALUES(?, ?, ?)");
+            st.setInt(1, pu.getPostID());
+            st.setString(2, pu.getUserID());
+            st.setString(3, pu.getPostDate());
+
+
+
+            st.executeUpdate();
+
+            return pu;
+        } catch (final SQLException e) {
+            throw new PersistenceException(e);
+            //Log.d("tester", e.toString());
+        }
+        //return post;
     }
 
 }

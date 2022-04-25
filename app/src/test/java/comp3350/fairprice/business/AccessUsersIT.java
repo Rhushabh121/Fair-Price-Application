@@ -84,7 +84,7 @@ public class AccessUsersIT {
         tempDB = TestUtils.copyDB();
         final PostPersistence persistence = new PostPersistenceHSQLDB(this.tempDB.getAbsolutePath().replace(".script", ""));
         accessPosts = new AccessPosts(persistence);
-        accessPosts.addPost("book","the alchemist",20);
+        accessPosts.addPost("book","the alchemist",20, "books");
         Assertions.assertEquals(2, accessPosts.getPosts().size());
     }
 

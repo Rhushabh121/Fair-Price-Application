@@ -27,6 +27,8 @@
             android:textSize="30sp" />
 
 
+
+
         <!--  1st  -->
         <RelativeLayout
             android:layout_width="match_parent"
@@ -61,10 +63,10 @@
                     android:layout_alignParentBottom="true"
                     android:background="#00000000"
                     android:fontFamily="@font/baloo"
-                    android:onClick="buttonExpandAll"
+                    android:onClick="buttonVehiclesExpandAll"
                     android:padding="20dp"
-                    android:textColor="@color/white"
-                    android:text="@string/expand_all" />
+                    android:text="@string/expand_all"
+                    android:textColor="@color/white" />
 
 
             </RelativeLayout>
@@ -114,10 +116,10 @@
                     android:layout_alignParentBottom="true"
                     android:background="#00000000"
                     android:fontFamily="@font/baloo"
-                    android:onClick="buttonExpandAll"
+                    android:onClick="buttonElectronicsExpandAll"
                     android:padding="20dp"
-                    android:textColor="@color/white"
-                    android:text="@string/expand_all" />
+                    android:text="@string/expand_all"
+                    android:textColor="@color/white" />
 
 
             </RelativeLayout>
@@ -165,10 +167,10 @@
                     android:layout_alignParentBottom="true"
                     android:background="#00000000"
                     android:fontFamily="@font/baloo"
-                    android:onClick="buttonExpandAll"
+                    android:onClick="buttonVideoGamesExpandAll"
                     android:padding="20dp"
-                    android:textColor="@color/white"
-                    android:text="@string/expand_all" />
+                    android:text="@string/expand_all"
+                    android:textColor="@color/white" />
 
 
             </RelativeLayout>
@@ -226,10 +228,10 @@
                     android:layout_alignParentBottom="true"
                     android:background="#00000000"
                     android:fontFamily="@font/baloo"
-                    android:onClick="buttonExpandAll"
+                    android:onClick="buttonClothingExpandAll"
                     android:padding="20dp"
-                    android:textColor="@color/white"
-                    android:text="@string/expand_all" />
+                    android:text="@string/expand_all"
+                    android:textColor="@color/white" />
 
 
             </RelativeLayout>
@@ -277,10 +279,10 @@
                     android:layout_alignParentBottom="true"
                     android:background="#00000000"
                     android:fontFamily="@font/baloo"
-                    android:onClick="buttonExpandAll"
+                    android:onClick="buttonBooksExpandAll"
                     android:padding="20dp"
-                    android:textColor="@color/white"
-                    android:text="@string/expand_all" />
+                    android:text="@string/expand_all"
+                    android:textColor="@color/white" />
 
 
             </RelativeLayout>
@@ -293,6 +295,114 @@
                 android:src="@drawable/books" />
 
         </RelativeLayout>
+        <!--  6th  -->
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="190dp">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="150dp"
+                android:layout_margin="20dp"
+                android:background="@drawable/brown">
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:padding="5dp"
+                    android:scaleType="fitXY"
+                    android:src="@drawable/texture" />
+
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:fontFamily="@font/baloo"
+                    android:padding="10dp"
+                    android:text="@string/category_6"
+                    android:textColor="@color/white"
+                    android:textSize="30sp" />
+
+                <Button
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_alignParentBottom="true"
+                    android:background="#00000000"
+                    android:fontFamily="@font/baloo"
+                    android:onClick="buttonFurnituresExpandAll"
+                    android:padding="20dp"
+                    android:text="@string/expand_all"
+                    android:textColor="@color/white" />
+
+
+            </RelativeLayout>
+
+            <ImageView
+                android:layout_width="200dp"
+                android:layout_height="200dp"
+                android:layout_alignParentLeft="true"
+                android:layout_marginTop="50sp"
+                android:src="@drawable/couch" />
+
+        </RelativeLayout>
+
+        <!--  7th -->
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="190dp">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="150dp"
+                android:layout_margin="20dp"
+                android:background="@drawable/red">
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:padding="5dp"
+                    android:scaleType="fitXY"
+                    android:src="@drawable/texture" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/baloo"
+                    android:padding="10dp"
+                    android:text="@string/category_7"
+                    android:textColor="@color/white"
+                    android:textSize="30sp" />
+
+                <Button
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentBottom="true"
+                    android:background="#00000000"
+                    android:fontFamily="@font/baloo"
+                    android:onClick="buttonMiscExpandAll"
+                    android:padding="20dp"
+                    android:text="@string/expand_all"
+                    android:textColor="@color/white" />
+
+
+            </RelativeLayout>
+
+            <ImageView
+                android:layout_width="275dp"
+                android:layout_height="275dp"
+                android:layout_alignParentRight="true"
+                android:layout_marginTop="70sp"
+                android:src="@drawable/misc" />
+
+        </RelativeLayout>
+
+
+
+
 
 
     </LinearLayout>

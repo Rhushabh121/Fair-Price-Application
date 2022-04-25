@@ -1,7 +1,7 @@
 package comp3350.fairprice;
 
-import org.junit.Test;
-
+//import org.junit.Test;
+import org.junit.jupiter.api.Test;
 import static org.junit.Assert.*;
 
 /**

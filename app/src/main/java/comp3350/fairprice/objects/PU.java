@@ -21,4 +21,12 @@ public class PU {
     public String getPostDate() {
         return postDate;
     }
+
+
+    public Post getPost()
+    {
+        return this.post;
+    }
 }
+
+

@@ -1,14 +1,15 @@
 package comp3350.fairprice.presentation;
-
 import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.TextView;
-
+import java.util.ArrayList;
+import java.util.List;
 import comp3350.fairprice.R;
-import comp3350.fairprice.presentation.Register;
+import comp3350.fairprice.business.AccessUsers;
+import comp3350.fairprice.objects.User;
+import comp3350.fairprice.presentation.MyListings;
 
 
 
@@ -19,19 +20,32 @@ import comp3350.fairprice.presentation.Register;
 
 public class Welcome extends AppCompatActivity {
 
+    private AccessUsers accessUsers;
+    private List<User> userList;
+    public static int userID = 0;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_welcome);
 
+        accessUsers = new AccessUsers();
+        userList = new ArrayList<User>();
+
         // Get the Intent that started this activity and extract the string
-        Intent intent = getIntent();
-        String message = intent.getStringExtra(Login.EXTRA_MESSAGE);
+        Intent loginOrRegisterIntent = this.getIntent();
+        String message = loginOrRegisterIntent.getStringExtra("message");
+
+
 
         // Capture the layout's TextView and set the string as its text
         TextView textView = findViewById(R.id.textView);
         textView.setText(message);
+
+        userList.addAll(accessUsers.getUsers());
+
     }
+
 
 
     /**
@@ -50,10 +64,26 @@ public class Welcome extends AppCompatActivity {
      * @param view
      */
     public void openExplore(View view) {
-
         Intent intent = new Intent(this, MainActivity.class);
         startActivity(intent);
 
     }
 
+    /**
+     * When the user clicks My Listings button, take him to the list of listings he posted on the app.
+     * Search from the collection of all PU objects, then find the username that matches with the user of
+     * an object from PU list, display all those listings.
+     * @param view
+     */
+    public void myListings(View view) {
+        Intent loginOrRegisterIntent = this.getIntent();
+        String username = loginOrRegisterIntent.getStringExtra("username");
+        String password = loginOrRegisterIntent.getStringExtra("password");
+        String message = loginOrRegisterIntent.getStringExtra("message");
+        Intent intent = new Intent(this, MyListings.class);
+        intent.putExtra("username",username);
+        intent.putExtra("password",password);
+        intent.putExtra("message",message);
+        startActivity(intent);
+    }
 }

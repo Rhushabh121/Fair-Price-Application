@@ -7,4 +7,6 @@ import comp3350.fairprice.objects.Post;
 import comp3350.fairprice.objects.User;
 public interface PUPersistence {
     List<PU> getUP(final String userId);
+
+    PU insertPU(PU pu);
 }

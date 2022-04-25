@@ -13,25 +13,27 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_marginStart="32dp"
+            android:layout_marginStart="8dp"
             android:layout_weight="1"
             android:orientation="vertical"
             app:layout_constraintStart_toStartOf="parent">
 
             <TextView
                 android:id="@+id/post_title"
-                android:layout_width="160dp"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:text="TEXT"
+                android:background="@drawable/my_selector"
                 android:textAppearance="@style/TextAppearance.AppCompat.Display1" />
 
             <TextView
                 android:id="@+id/post_price"
-                android:layout_width="160dp"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:text="TextView"
+                android:background="@drawable/my_selector"
                 android:textAppearance="@style/TextAppearance.AppCompat.Body2" />
         </LinearLayout>
     </androidx.constraintlayout.widget.ConstraintLayout>

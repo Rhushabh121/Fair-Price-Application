@@ -32,8 +32,9 @@ public class PostPersistenceHSQLDB implements PostPersistence {
         final String postTitle = rs.getString("title");
         final String postDescription = rs.getString("description");
         final Double postPrice = rs.getDouble("price");
+        final String postCategory = rs.getString("category");
 
-        return new Post(postID,postTitle,postDescription,postPrice);
+        return new Post(postID,postTitle,postDescription,postPrice,postCategory);
     }
 
     public List<Post> getPostList()
@@ -55,29 +56,30 @@ public class PostPersistenceHSQLDB implements PostPersistence {
         }
         catch (final SQLException e)
         {
-            //throw new PersistenceException(e);
-            Log.d("tester", e.toString());
+            throw new PersistenceException(e);
+            //Log.d("tester", e.toString());
         }
-        return posts;
+        //return posts;
     }
     public Post insertPost(Post post)
     {
         try (final Connection c = connection()) {
-            final PreparedStatement st = c.prepareStatement("INSERT INTO posts VALUES(?, ?, ?, ?)");
+            final PreparedStatement st = c.prepareStatement("INSERT INTO posts VALUES(?, ?, ?, ?,?)");
             st.setInt(1, post.getPostId());
             st.setString(2, post.getTitle());
             st.setString(3, post.getDescription());
             st.setDouble(4, post.getPrice1());
+            st.setString(5, post.getCategory());
 
 
             st.executeUpdate();
 
             return post;
         } catch (final SQLException e) {
-            //throw new PersistenceException(e);
-            Log.d("tester", e.toString());
+            throw new PersistenceException(e);
+            //Log.d("tester", e.toString());
         }
-        return post;
+        //return post;
     }
     public void deletePost(Post post)
     {
@@ -89,8 +91,8 @@ public class PostPersistenceHSQLDB implements PostPersistence {
             st.setInt(1, post.getPostId());
             st.executeUpdate();
         } catch (final SQLException e) {
-            //throw new PersistenceException(e);
-            Log.d("tester", e.toString());
+            throw new PersistenceException(e);
+            //Log.d("tester", e.toString());
         }
     }
 }

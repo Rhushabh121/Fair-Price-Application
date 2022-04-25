@@ -10,6 +10,18 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.FairPrice">
         <activity
+            android:name=".presentation.reportPage"
+            android:exported="false" />
+        <activity
+            android:name=".presentation.Report"
+            android:exported="false" />
+        <activity
+            android:name=".presentation.MyListings"
+            android:exported="false" />
+        <activity
+            android:name=".presentation.payment"
+            android:exported="false" />
+        <activity
             android:name=".presentation.Description"
             android:exported="false" />
         <activity

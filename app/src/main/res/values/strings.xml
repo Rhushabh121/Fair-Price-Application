@@ -12,5 +12,7 @@
     <string name="category_3">Video Games</string>
     <string name="category_4">Clothing</string>
     <string name="category_5">Books</string>
+    <string name="category_6">Furnitures</string>
+    <string name="category_7">Miscellaneous</string>
     <string name="expand_all">Expand All</string>
 </resources>
