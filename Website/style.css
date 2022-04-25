@@ -1,0 +1,177 @@
+*{margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+}
+
+.header{
+    height: 50vh;
+   width: 100%;
+   background-image: linear-gradient(rgba(4,9,30,0.7),rgba(4,9,30,0.7)),url(Images/handshake.jpg); 
+   background-position: center;
+   background-size: cover;
+   position: relative;
+}
+
+.text-box{
+    width: 90%;
+    color: white;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+text-align: center;
+}
+.text-box h1{
+    font-size: 50px;
+ 
+}
+
+.text-box p{
+    margin: -15px 0 40px;
+    font-size: 14px;
+    color: white;
+}
+
+/* Overview */
+.overview{
+    width: 80%;
+    margin: auto;
+    text-align: center;
+  
+
+}
+h1{
+    font-size: 36px;
+    font-weight: 600;
+}
+
+
+p{
+    color: black;
+    font-size: 14px;
+    font-weight: 300;
+    line-height: 22px;
+    padding: 10px;
+}
+.row{
+    margin: 5%;
+    display: flex;
+    justify-content: space-between;
+}
+
+
+
+.overview-col{
+    flex-basis: 31%;
+    background: lightblue;
+    border-radius: 2px;
+    margin-bottom:  5%;
+    padding: 20px 12px;
+    box-sizing: border-box;
+    border-style:solid;
+    border-color: black;
+}
+
+
+
+.sale-col{
+    flex-basis: 31%;
+    background: lightblue;
+    border-radius: 2px;
+    margin-top:  -75px;
+    margin-left: 60px;
+    padding: 20px 12px;
+   width: 88.2%;
+   border-style:solid;
+    border-color: black;
+}
+
+.bottomrow{
+    margin: 5%;
+    display: flex;
+     margin-top:  -100px;
+    justify-content: space-between;
+}
+/* feature 1 */
+.features{
+   width: 72.2%;
+margin: auto;
+padding-top: 80px;
+padding-bottom: 50px;
+text-align: center;
+ 
+}
+ 
+.features h3{
+    border-style:solid;
+    border-color: black;
+  
+      background: lightpink;
+    bottom: 0;
+ }
+
+.feature-col{
+     flex-basis: 48%;
+     padding: 30px 2px ;
+}
+
+ 
+
+
+.feature-col img{
+ width: 60%;
+  
+}
+
+.feature-col img:hover{
+    width: 90%;
+     
+   }
+
+.feature-col h1{
+    padding-top: 0%;
+     
+   }
+   .feature-col p{
+    padding: 3px 0 25px;
+     
+   }
+
+ 
+
+
+   .row1{
+    margin: 5%;
+    display: flex;
+    justify-content: space-between;
+    transition: 0.2s;
+    background-color: lightblue;
+    
+    
+}
+ 
+.row1:hover{
+    margin: 5%;
+    display: flex;
+    justify-content: space-between;
+    border-style:solid;
+    border-color: black;
+}
+
+.row2{
+    margin: 5%;
+    display: flex;
+    justify-content: space-between;
+    transition: 0.2s;
+    background-color: lightpink;
+}
+
+.row2:hover{
+    margin: 5%;
+    display: flex;
+    justify-content: space-between;
+    border-style:solid;
+    border-color: black;
+    
+}
+
