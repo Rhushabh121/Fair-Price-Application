@@ -42,6 +42,20 @@ This class where user can find the posts according to their cagegories, it is ki
 
 ##### Description 
 
+Description view page for the product that shows further information of the item.
+
+##### Payment
+
+A dialogue format box that acts as a dummy payment page for user to enter the details of their card. 
+
+##### Report
+
+This class mainly shows the policy of app for reporting , not actually a report.  
+
+##### Report Page
+  
+Main report page where users will select options for reporting a listing
+
 
 ## **Business/Logic Layer**
 
