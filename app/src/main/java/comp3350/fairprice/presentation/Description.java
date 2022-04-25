@@ -12,6 +12,9 @@ import android.widget.Toast;
 import comp3350.fairprice.R;
 
 public class Description extends AppCompatActivity {
+    // This class will show the Description of an item ( price + detail )
+    // Also include Report and Buy features in this class
+    
     String price;
     int id;
     private Button buy;
@@ -22,22 +25,27 @@ public class Description extends AppCompatActivity {
         setContentView(R.layout.activity_description);
         Intent thisIntent = getIntent();
         buy = (Button) findViewById(R.id.btnBuy);
+
+
         if (thisIntent != null) {
             String className = thisIntent.getStringExtra("class");
-//This is if the intent is from the main activity class
+
+            //This is if the intent is from the main activity class
             if (className != null && className.equals("MyListing")) {
                 buy.setVisibility(View.GONE);
             }
         }
 
-
+        // Main part of Description layout
         String description = thisIntent.getStringExtra("Description");
         String title = thisIntent.getStringExtra("title");
         price = thisIntent.getStringExtra("price");
         id = thisIntent.getIntExtra("id", 0);
-
         String category = thisIntent.getStringExtra("category");
 
+
+
+        /* Binding into ids to make it dynamic for each item */
         TextView des = findViewById(R.id.description);
         TextView titles = findViewById(R.id.titleDes);
         TextView categories = findViewById(R.id.categoryD);
@@ -50,6 +58,7 @@ public class Description extends AppCompatActivity {
 
     }
 
+        // Buy feature
     public void clickBuy(View v) {
         Intent mainIntent = new Intent(this, payment.class);
         mainIntent.putExtra("price", price);
@@ -57,6 +66,8 @@ public class Description extends AppCompatActivity {
 
         startActivity(mainIntent);
     }
+
+        // Report feature
     public void report(View v){
         Intent i = new Intent(this,Report.class);
         startActivity(i);
