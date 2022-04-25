@@ -8,7 +8,7 @@ From Iteration 2, we have cleaned up planned technical debt which is deliberate 
 ### Show links to a commit where you paid off technical debt. Write 2-5 sentences
 that explain what debt was paid, and what its classification is.
 
-![title](Images/commitsDept.png)
+![title](Images/commitsDebt.png)
 
   
 
